@@ -1,0 +1,32 @@
+header{
+    background-color: rgb(126, 178, 247);
+    height: 140px;
+}
+
+
+
+.cerebroLink{
+    position: absolute;
+    margin-left: 78%;
+    margin-top: -4.5%;
+    width: 21%;
+}
+.logo{
+    position: absolute;
+    width: 17%;
+}
+h1{
+    margin-left: 40%;
+}
+.info{
+    column-count: 4;
+}
+.datos{
+    background-color: rgb(163, 194, 234);
+    padding-left: 10%;
+    column-count: 2;
+}
+.elon{
+    margin-left: 15%;
+    width: 70%;
+}
