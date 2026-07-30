@@ -99,6 +99,15 @@ document.getElementById('year').textContent = new Date().getFullYear();
 // Añade aquí cada proyecto cuando esté listo. Estructura preparada, se
 // renderiza automáticamente y el estado vacío desaparece solo.
 const projects = [
+  {
+    title: 'LCP Builder',
+    description: 'Editor visual multiplataforma para crear paquetes de contenido (.lcp) del TTRPG Lancer sin escribir JSON a mano: el máster rellena formularios y la app genera el pack listo para importar en COMP/CON.',
+    role: 'Proyecto en solitario con desarrollo asistido por IA (pair-programming con Claude Code). Definí la arquitectura Clean/Hexagonal y las decisiones técnicas y de producto, y llevé el ciclo completo —diseño, revisión de cada PR y control de calidad (382+ tests + CI/CD)— mientras la IA aceleraba la escritura del código bajo esa dirección.',
+    stack: ['Flutter 3.44', 'Dart 3.12', 'Clean/Hexagonal Architecture', 'Material 3', 'GitHub Actions (CI/CD)'],
+    repoUrl: 'https://github.com/1dardo1/lcp-builder',
+    demoUrl: 'https://1dardo1.github.io/lcp-builder/',
+    image: 'img/projects/lcp-builder.jpg',
+  },
   // {
   //   title: 'Nombre del proyecto',
   //   description: 'Qué problema resuelve.',
@@ -129,7 +138,7 @@ function renderProjects() {
       <article class="project-card">
         ${
           project.image
-            ? `<img src="${project.image}" alt="Captura de ${project.title}" class="w-full h-44 object-cover" loading="lazy">`
+            ? `<img src="${project.image}" alt="Captura de ${project.title}" class="w-full h-44 object-cover object-top" loading="lazy">`
             : ''
         }
         <div class="p-6 flex flex-col gap-3 flex-1">
