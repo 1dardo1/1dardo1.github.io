@@ -98,7 +98,7 @@ const translations = {
     nav: { home: 'Inicio', about: 'Sobre mí', stack: 'Stack', projects: 'Proyectos', contact: 'Contacto' },
     hero: {
       subtitle:
-        'Construyo software backend robusto e interfaces claras — <strong class="text-slate-800 dark:text-slate-200 font-semibold">.NET, Java y Angular</strong> — con el rumbo puesto en evolucionar hacia <strong class="text-slate-800 dark:text-slate-200 font-semibold">Arquitectura de Software e Ingeniería de IA</strong>.',
+        'Construyo software backend robusto e interfaces claras — <strong class="text-slate-800 dark:text-slate-200 font-semibold">.NET, Java y Angular</strong> — con el objetivo de evolucionar hacia <strong class="text-slate-800 dark:text-slate-200 font-semibold">Arquitectura de Software e Ingeniería de IA</strong>.',
       clockLabel: 'Experiencia profesional en tiempo real',
       ctaProjects: 'Ver proyectos',
       ctaContact: 'Contactar',
@@ -134,16 +134,16 @@ const translations = {
       learning: 'Actualmente aprendiendo',
       selfTaught: 'Autoaprendizaje',
       viaMaster:
-        'Vía <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-accent">Máster de Desarrollo con IA</a> — Big School',
+        'A través del <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-accent">Máster de Desarrollo con IA</a> — Big School',
       softwareArchitecture: 'Arquitectura de Software',
       aiAssistedDev: 'Desarrollo asistido por IA',
-      aiTesting: 'Testing y revisión de código con IA',
+      aiTesting: 'Pruebas y revisión de código asistidas por IA',
       infraCloud: 'Infraestructura y Cloud',
       security: 'Seguridad',
     },
     projects: {
       title: 'Proyectos',
-      subtitle: 'Selección de proyectos con el problema que resuelven, mi contribución y el stack usado.',
+      subtitle: 'Selección de proyectos con el problema que resuelven, mi contribución y el stack utilizado.',
       emptyText: 'Estoy documentando mis proyectos en detalle — problema, rol, stack y resultados. Disponibles muy pronto.',
       viewGithub: 'Ver actividad en GitHub',
       roleLabel: 'Rol:',
@@ -153,7 +153,7 @@ const translations = {
     contact: {
       title: 'Hablemos',
       subtitle:
-        'Abierto a nuevas oportunidades como Backend / Fullstack Developer, con rumbo hacia Arquitectura de Software e Ingeniería de IA. Si mi perfil encaja con lo que buscas, escríbeme.',
+        'Abierto a nuevas oportunidades como Backend / Fullstack Developer, con el objetivo de evolucionar hacia Arquitectura de Software e Ingeniería de IA. Si mi perfil encaja con lo que buscas, escríbeme.',
       nameLabel: 'Nombre',
       emailLabel: 'Tu email',
       messageLabel: 'Mensaje',
