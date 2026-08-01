@@ -14,7 +14,7 @@ const translations = {
     nav: { home: 'Home', about: 'About', stack: 'Stack', projects: 'Projects', contact: 'Contact' },
     hero: {
       subtitle:
-        'I build robust backend software and clean interfaces — <strong class="text-slate-800 dark:text-slate-200 font-semibold">.NET, Java, and Angular</strong> — while working toward <strong class="text-slate-800 dark:text-slate-200 font-semibold">Software Architecture and AI Engineering</strong>.',
+        'I build reliable backend software and clean interfaces — <strong class="text-slate-800 dark:text-slate-200 font-semibold">.NET, Java, and Angular</strong> — while working toward <strong class="text-slate-800 dark:text-slate-200 font-semibold">Software Architecture and AI Engineering</strong>.',
       clockLabel: 'Real-time professional experience',
       ctaProjects: 'View projects',
       ctaContact: 'Contact',
