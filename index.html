@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Carlos Martín Velázquez — Backend / Fullstack Developer</title>
-<meta name="description" content="Portafolio de Carlos Martín Velázquez, Backend / Fullstack Developer (.NET · Java · Angular). Ingeniero Informático especializado en soluciones backend robustas.">
+<meta name="description" content="Portfolio of Carlos Martín Velázquez, Backend / Fullstack Developer (.NET · Java · Angular). Computer Engineer specialized in robust backend solutions.">
 <meta property="og:title" content="Carlos Martín Velázquez — Backend / Fullstack Developer">
-<meta property="og:description" content="Ingeniero Informático · Backend Developer .NET en Mecalux · Formándome en desarrollo de software potenciado por IA.">
+<meta property="og:description" content="Computer Engineer · .NET Backend Developer at Mecalux · Currently studying AI-powered software development.">
 <meta property="og:type" content="website">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='52' font-family='Arial,sans-serif' font-weight='bold' fill='white' text-anchor='middle'%3ECM%3C/text%3E%3C/svg%3E">
 
 <script>
-  // Evita el "flash" de tema incorrecto: se ejecuta antes de pintar.
+  // Avoids a flash of the wrong theme/language: runs before paint.
   (function () {
-    const stored = localStorage.getItem('theme');
+    const storedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const theme = stored || (prefersDark ? 'dark' : 'light');
+    const theme = storedTheme || (prefersDark ? 'dark' : 'light');
     if (theme === 'dark') document.documentElement.classList.add('dark');
+
+    const storedLang = localStorage.getItem('lang');
+    document.documentElement.lang = storedLang === 'es' ? 'es' : 'en';
   })();
 </script>
 
@@ -26,25 +29,30 @@
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-200 font-sans antialiased transition-colors duration-300">
 
-<a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+<a href="#contenido" class="skip-link" data-i18n="a11y.skipLink">Skip to main content</a>
 
 <!-- ===== HEADER / NAV ===== -->
 <header class="sticky top-0 z-50 border-b border-slate-200/70 dark:border-slate-800/70 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-md">
-  <nav class="mx-auto max-w-6xl px-5 sm:px-8 flex items-center justify-between h-16" aria-label="Navegación principal">
+  <nav class="mx-auto max-w-6xl px-5 sm:px-8 flex items-center justify-between h-16" aria-label="Main navigation" data-i18n-aria="a11y.mainNav">
     <a href="#inicio" class="font-bold text-lg tracking-tight text-slate-900 dark:text-white">
       Carlos<span class="text-accent">.</span>dev
     </a>
 
     <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
-      <li><a href="#inicio" class="nav-link">Inicio</a></li>
-      <li><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
-      <li><a href="#stack" class="nav-link">Stack</a></li>
-      <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
-      <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      <li><a href="#inicio" class="nav-link" data-i18n="nav.home">Home</a></li>
+      <li><a href="#sobre-mi" class="nav-link" data-i18n="nav.about">About</a></li>
+      <li><a href="#stack" class="nav-link" data-i18n="nav.stack">Stack</a></li>
+      <li><a href="#proyectos" class="nav-link" data-i18n="nav.projects">Projects</a></li>
+      <li><a href="#contacto" class="nav-link" data-i18n="nav.contact">Contact</a></li>
     </ul>
 
     <div class="flex items-center gap-2">
-      <button id="theme-toggle" type="button" aria-label="Cambiar entre modo claro y oscuro"
+      <button id="lang-toggle" type="button" aria-label="Switch to Spanish"
+        class="grid place-items-center min-w-10 h-10 px-2 rounded-full border border-slate-200 dark:border-slate-800 text-xs font-mono font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors">
+        <span id="lang-toggle-label">ES</span>
+      </button>
+
+      <button id="theme-toggle" type="button" aria-label="Switch between light and dark mode" data-i18n-aria="a11y.themeToggle"
         class="grid place-items-center w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors">
         <svg id="icon-sun" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1.5m0 15V21m9-9h-1.5M4.5 12H3m15.36 6.36-1.06-1.06M6.7 6.7 5.64 5.64m12.72 0-1.06 1.06M6.7 17.3l-1.06 1.06M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Z" />
@@ -54,7 +62,7 @@
         </svg>
       </button>
 
-      <button id="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobile-menu"
+      <button id="menu-toggle" type="button" aria-label="Open navigation menu" data-i18n-aria="a11y.menuToggle" aria-expanded="false" aria-controls="mobile-menu"
         class="md:hidden grid place-items-center w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300">
         <svg id="icon-menu" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -67,11 +75,11 @@
   </nav>
 
   <ul id="mobile-menu" class="md:hidden hidden flex-col gap-1 px-5 pb-4 text-sm font-medium">
-    <li><a href="#inicio" class="block py-2 nav-link">Inicio</a></li>
-    <li><a href="#sobre-mi" class="block py-2 nav-link">Sobre mí</a></li>
-    <li><a href="#stack" class="block py-2 nav-link">Stack</a></li>
-    <li><a href="#proyectos" class="block py-2 nav-link">Proyectos</a></li>
-    <li><a href="#contacto" class="block py-2 nav-link">Contacto</a></li>
+    <li><a href="#inicio" class="block py-2 nav-link" data-i18n="nav.home">Home</a></li>
+    <li><a href="#sobre-mi" class="block py-2 nav-link" data-i18n="nav.about">About</a></li>
+    <li><a href="#stack" class="block py-2 nav-link" data-i18n="nav.stack">Stack</a></li>
+    <li><a href="#proyectos" class="block py-2 nav-link" data-i18n="nav.projects">Projects</a></li>
+    <li><a href="#contacto" class="block py-2 nav-link" data-i18n="nav.contact">Contact</a></li>
   </ul>
 </header>
 
@@ -90,19 +98,19 @@
           Carlos Martín <span class="gradient-text">Velázquez</span>
         </h1>
 
-        <p class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
-          Construyo software backend robusto e interfaces claras — <strong class="text-slate-800 dark:text-slate-200 font-semibold">.NET, Java y Angular</strong> — con el rumbo puesto en evolucionar hacia <strong class="text-slate-800 dark:text-slate-200 font-semibold">Arquitectura de Software e Ingeniería de IA</strong>.
+        <p class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="hero.subtitle">
+          I build robust backend software and clear interfaces — <strong class="text-slate-800 dark:text-slate-200 font-semibold">.NET, Java and Angular</strong> — with my sights set on growing into <strong class="text-slate-800 dark:text-slate-200 font-semibold">Software Architecture and AI Engineering</strong>.
         </p>
 
-        <!-- Reloj de experiencia en tiempo real -->
+        <!-- Real-time experience clock -->
         <div class="mt-8 inline-flex flex-col gap-1 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/60 dark:bg-slate-900/60 px-5 py-4 font-mono">
-          <span class="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500">Experiencia profesional en tiempo real</span>
-          <span id="experience-clock" class="text-lg sm:text-xl font-semibold text-slate-900 dark:text-white" aria-live="polite">calculando…</span>
+          <span class="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500" data-i18n="hero.clockLabel">Real-time professional experience</span>
+          <span id="experience-clock" class="text-lg sm:text-xl font-semibold text-slate-900 dark:text-white" aria-live="polite">calculating…</span>
         </div>
 
         <div class="mt-10 flex flex-wrap items-center gap-4">
-          <a href="#proyectos" class="btn-primary">Ver proyectos</a>
-          <a href="#contacto" class="btn-secondary">Contactar</a>
+          <a href="#proyectos" class="btn-primary" data-i18n="hero.ctaProjects">View projects</a>
+          <a href="#contacto" class="btn-secondary" data-i18n="hero.ctaContact">Contact</a>
         </div>
 
         <p class="mt-8 text-sm text-slate-500 dark:text-slate-500 flex items-center gap-1.5">
@@ -110,48 +118,48 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
           </svg>
-          España · Abierto a remoto / híbrido
+          <span data-i18n="hero.location">Spain · Open to remote / hybrid</span>
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ===== SOBRE MÍ ===== -->
+  <!-- ===== ABOUT ===== -->
   <section id="sobre-mi" class="scroll-mt-16 py-20 sm:py-28 border-t border-slate-200 dark:border-slate-800">
     <div class="mx-auto max-w-6xl px-5 sm:px-8">
       <div class="grid md:grid-cols-5 gap-12">
         <div class="md:col-span-3">
-          <h2 class="section-title">Sobre mí</h2>
+          <h2 class="section-title" data-i18n="about.title">About me</h2>
           <div class="mt-6 space-y-5 text-slate-600 dark:text-slate-400 leading-relaxed">
-            <p>
-              Soy <strong class="text-slate-800 dark:text-slate-200">Ingeniero Informático</strong> por la Universidad Pontificia de Salamanca. Actualmente trabajo como <strong class="text-slate-800 dark:text-slate-200">Backend Developer .NET en Mecalux</strong>, dentro del sector logístico, desarrollando y manteniendo soluciones backend para sistemas de gestión de almacenes a escala real.
+            <p data-i18n="about.p1">
+              I'm a <strong class="text-slate-800 dark:text-slate-200">Computer Engineer</strong> from Universidad Pontificia de Salamanca. I currently work as a <strong class="text-slate-800 dark:text-slate-200">.NET Backend Developer at Mecalux</strong>, in the logistics sector, developing and maintaining backend solutions for warehouse management systems at real scale.
             </p>
-            <p>
-              Mi objetivo profesional es evolucionar hacia puestos de <strong class="text-slate-800 dark:text-slate-200">Arquitecto de Software</strong> o <strong class="text-slate-800 dark:text-slate-200">Ingeniero de IA</strong>. Para ello curso el <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="font-medium text-accent-dark dark:text-accent-light underline underline-offset-2 hover:text-accent">Máster de Desarrollo con IA</a> en Big School, dirigido tanto a desarrolladores junior como a profesionales que buscan integrar la IA en su flujo de trabajo diario y evolucionar hacia roles de desarrollo potenciado por IA.
+            <p data-i18n="about.p2">
+              My professional goal is to grow into <strong class="text-slate-800 dark:text-slate-200">Software Architect</strong> or <strong class="text-slate-800 dark:text-slate-200">AI Engineer</strong> roles. To that end, I'm studying the <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="font-medium text-accent-dark dark:text-accent-light underline underline-offset-2 hover:text-accent">Máster de Desarrollo con IA</a> at Big School, aimed at both junior developers and professionals looking to integrate AI into their daily workflow and move toward AI-powered development roles.
             </p>
-            <p>
-              Fuera del código soy <strong class="text-slate-800 dark:text-slate-200">2º Dan de Judo, cinturón negro y monitor federado</strong>. Llevo años formando y liderando grupos de alumnos — algo que traslado directamente a cómo trabajo en equipo: con constancia, método y capacidad real de enseñar lo que sé.
+            <p data-i18n="about.p3">
+              Outside of code I'm a <strong class="text-slate-800 dark:text-slate-200">2nd Dan Judo black belt and federated instructor</strong>. I've spent years training and leading groups of students — something that carries directly into how I work in a team: with consistency, method, and a real ability to teach what I know.
             </p>
           </div>
         </div>
 
         <div class="md:col-span-2">
-          <h3 class="text-sm font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-500">Formación</h3>
+          <h3 class="text-sm font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-500" data-i18n="about.educationTitle">Education</h3>
           <ul class="mt-5 space-y-5">
             <li class="timeline-item">
-              <p class="font-semibold text-slate-800 dark:text-slate-200">Grado en Ingeniería Informática</p>
+              <p class="font-semibold text-slate-800 dark:text-slate-200" data-i18n="about.degreeTitle">Bachelor's in Computer Engineering</p>
               <p class="text-sm text-slate-500 dark:text-slate-500">Universidad Pontificia de Salamanca · 2025</p>
             </li>
             <li class="timeline-item">
               <p class="font-semibold text-slate-800 dark:text-slate-200">
                 <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="hover:text-accent">Máster de Desarrollo con IA</a>
               </p>
-              <p class="text-sm text-slate-500 dark:text-slate-500">Big School · En curso</p>
+              <p class="text-sm text-slate-500 dark:text-slate-500" data-i18n="about.masterSubtitle">Big School · Ongoing</p>
             </li>
           </ul>
 
-          <h3 class="mt-10 text-sm font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-500">Idiomas</h3>
-          <p class="mt-5 text-slate-600 dark:text-slate-400">Inglés — C1 (Cambridge)</p>
+          <h3 class="mt-10 text-sm font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-500" data-i18n="about.languagesTitle">Languages</h3>
+          <p class="mt-5 text-slate-600 dark:text-slate-400" data-i18n="about.languagesValue">English — C1 (Cambridge)</p>
         </div>
       </div>
     </div>
@@ -160,8 +168,8 @@
   <!-- ===== STACK ===== -->
   <section id="stack" class="scroll-mt-16 py-20 sm:py-28 border-t border-slate-200 dark:border-slate-800 bg-slate-100/60 dark:bg-slate-900/30">
     <div class="mx-auto max-w-6xl px-5 sm:px-8">
-      <h2 class="section-title">Stack de Ingeniería</h2>
-      <p class="mt-4 max-w-2xl text-slate-600 dark:text-slate-400">Tecnologías que uso a diario o que forman parte activa de mi formación.</p>
+      <h2 class="section-title" data-i18n="stack.title">Engineering Stack</h2>
+      <p class="mt-4 max-w-2xl text-slate-600 dark:text-slate-400" data-i18n="stack.subtitle">Technologies I use daily or that are an active part of my training.</p>
 
       <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
@@ -186,7 +194,7 @@
         </div>
 
         <div class="stack-card">
-          <h3 class="stack-card-title">Multiplataforma</h3>
+          <h3 class="stack-card-title" data-i18n="stack.crossPlatform">Cross-platform</h3>
           <div class="mt-4 flex flex-wrap gap-2">
             <span class="badge">Flutter / Dart</span>
             <span class="badge">iOS</span>
@@ -198,7 +206,7 @@
         </div>
 
         <div class="stack-card">
-          <h3 class="stack-card-title">Bases de datos</h3>
+          <h3 class="stack-card-title" data-i18n="stack.databases">Databases</h3>
           <div class="mt-4 flex flex-wrap gap-2">
             <span class="badge">PostgreSQL</span>
             <span class="badge">MySQL</span>
@@ -207,7 +215,7 @@
         </div>
 
         <div class="stack-card">
-          <h3 class="stack-card-title">Herramientas</h3>
+          <h3 class="stack-card-title" data-i18n="stack.tools">Tools</h3>
           <div class="mt-4 flex flex-wrap gap-2">
             <span class="badge">Git / GitHub</span>
             <span class="badge">Swift</span>
@@ -215,22 +223,22 @@
         </div>
 
         <div class="stack-card sm:col-span-2 lg:col-span-3">
-          <h3 class="stack-card-title">Actualmente aprendiendo</h3>
+          <h3 class="stack-card-title" data-i18n="stack.learning">Currently learning</h3>
 
-          <p class="mt-4 text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-600">Autoaprendizaje</p>
+          <p class="mt-4 text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-600" data-i18n="stack.selfTaught">Self-taught</p>
           <div class="mt-2 flex flex-wrap gap-2">
             <span class="badge badge-learning">Docker</span>
           </div>
 
-          <p class="mt-5 text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-600">
-            Vía <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-accent">Máster de Desarrollo con IA</a> — Big School
+          <p class="mt-5 text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-600" data-i18n="stack.viaMaster">
+            Via <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-accent">Máster de Desarrollo con IA</a> — Big School
           </p>
           <div class="mt-2 flex flex-wrap gap-2">
-            <span class="badge badge-learning">Arquitectura de Software</span>
-            <span class="badge badge-learning">Desarrollo asistido por IA</span>
-            <span class="badge badge-learning">Testing y revisión de código con IA</span>
-            <span class="badge badge-learning">Infraestructura y Cloud</span>
-            <span class="badge badge-learning">Seguridad</span>
+            <span class="badge badge-learning" data-i18n="stack.softwareArchitecture">Software Architecture</span>
+            <span class="badge badge-learning" data-i18n="stack.aiAssistedDev">AI-assisted development</span>
+            <span class="badge badge-learning" data-i18n="stack.aiTesting">AI-assisted testing &amp; code review</span>
+            <span class="badge badge-learning" data-i18n="stack.infraCloud">Infrastructure &amp; Cloud</span>
+            <span class="badge badge-learning" data-i18n="stack.security">Security</span>
           </div>
         </div>
 
@@ -238,76 +246,77 @@
     </div>
   </section>
 
-  <!-- ===== PROYECTOS ===== -->
+  <!-- ===== PROJECTS ===== -->
   <section id="proyectos" class="scroll-mt-16 py-20 sm:py-28 border-t border-slate-200 dark:border-slate-800">
     <div class="mx-auto max-w-6xl px-5 sm:px-8">
-      <h2 class="section-title">Proyectos</h2>
-      <p class="mt-4 max-w-2xl text-slate-600 dark:text-slate-400">Selección de proyectos con el problema que resuelven, mi contribución y el stack usado.</p>
+      <h2 class="section-title" data-i18n="projects.title">Projects</h2>
+      <p class="mt-4 max-w-2xl text-slate-600 dark:text-slate-400" data-i18n="projects.subtitle">A selection of projects with the problem they solve, my contribution, and the stack used.</p>
 
-      <!-- Grid de proyectos: se renderiza dinámicamente desde js/main.js (array `projects`) -->
+      <!-- Project grid: rendered dynamically from js/main.js (`projects` array) -->
       <div id="projects-grid" class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6" aria-live="polite"></div>
 
-      <!-- Estado vacío: visible mientras `projects` esté vacío en js/main.js -->
+      <!-- Empty state: visible while `projects` is empty in js/main.js -->
       <div id="projects-empty" class="mt-12 rounded-2xl border border-dashed border-slate-300 dark:border-slate-700 px-6 py-16 text-center">
-        <p class="text-slate-600 dark:text-slate-400 max-w-md mx-auto">
-          Estoy documentando mis proyectos en detalle — problema, rol, stack y resultados. Disponibles muy pronto.
+        <p class="text-slate-600 dark:text-slate-400 max-w-md mx-auto" data-i18n="projects.emptyText">
+          I'm documenting my projects in detail — problem, role, stack, and results. Coming very soon.
         </p>
-        <a href="https://github.com/1dardo1" target="_blank" rel="noopener noreferrer" class="btn-secondary mt-6 inline-flex">
-          Ver actividad en GitHub
+        <a href="https://github.com/1dardo1" target="_blank" rel="noopener noreferrer" class="btn-secondary mt-6 inline-flex" data-i18n="projects.viewGithub">
+          View GitHub activity
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ===== CONTACTO ===== -->
+  <!-- ===== CONTACT ===== -->
   <section id="contacto" class="scroll-mt-16 py-20 sm:py-28 border-t border-slate-200 dark:border-slate-800 bg-slate-100/60 dark:bg-slate-900/30">
     <div class="mx-auto max-w-2xl px-5 sm:px-8 text-center">
-      <h2 class="section-title">Hablemos</h2>
-      <p class="mt-4 max-w-xl mx-auto text-slate-600 dark:text-slate-400">
-        Abierto a nuevas oportunidades como Backend / Fullstack Developer, con rumbo hacia Arquitectura de Software e Ingeniería de IA. Si mi perfil encaja con lo que buscas, escríbeme.
+      <h2 class="section-title" data-i18n="contact.title">Let's talk</h2>
+      <p class="mt-4 max-w-xl mx-auto text-slate-600 dark:text-slate-400" data-i18n="contact.subtitle">
+        Open to new opportunities as a Backend / Fullstack Developer, moving toward Software Architecture and AI Engineering. If my profile fits what you're looking for, reach out.
       </p>
 
       <form id="contact-form" class="mt-10 text-left space-y-4">
         <input type="checkbox" name="botcheck" class="hidden" style="display: none;" tabindex="-1" autocomplete="off">
 
         <div>
-          <label for="contact-name" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Nombre</label>
+          <label for="contact-name" class="block text-sm font-medium text-slate-700 dark:text-slate-300" data-i18n="contact.nameLabel">Name</label>
           <input type="text" id="contact-name" name="name" required
             class="mt-1.5 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-2.5 text-slate-800 dark:text-slate-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors">
         </div>
 
         <div>
-          <label for="contact-email" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Tu email</label>
+          <label for="contact-email" class="block text-sm font-medium text-slate-700 dark:text-slate-300" data-i18n="contact.emailLabel">Your email</label>
           <input type="email" id="contact-email" name="email" required
             class="mt-1.5 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-2.5 text-slate-800 dark:text-slate-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors">
         </div>
 
         <div>
-          <label for="contact-message" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Mensaje</label>
+          <label for="contact-message" class="block text-sm font-medium text-slate-700 dark:text-slate-300" data-i18n="contact.messageLabel">Message</label>
           <textarea id="contact-message" name="message" rows="5" required
             class="mt-1.5 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-2.5 text-slate-800 dark:text-slate-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors resize-y"></textarea>
         </div>
 
+        <!-- Kept constant regardless of UI language so the existing Gmail filter (by subject) keeps matching -->
         <input type="hidden" name="subject" value="Nuevo mensaje desde el portafolio">
 
-        <button type="submit" class="btn-primary w-full justify-center">Enviar mensaje</button>
+        <button type="submit" class="btn-primary w-full justify-center" data-i18n="contact.submit">Send message</button>
 
         <p id="contact-status" class="text-sm text-center" role="status" aria-live="polite"></p>
       </form>
 
       <div class="mt-10 pt-8 border-t border-slate-200 dark:border-slate-800">
-        <p class="text-sm text-slate-500 dark:text-slate-500">O escríbeme directamente</p>
+        <p class="text-sm text-slate-500 dark:text-slate-500" data-i18n="contact.directly">Or reach me directly</p>
         <div class="mt-4 flex justify-center gap-4">
-          <a href="mailto:crlsmartinvelazquez@gmail.com" class="social-icon" aria-label="Escribir un email a Carlos Martín Velázquez">
+          <a href="mailto:crlsmartinvelazquez@gmail.com" class="social-icon" aria-label="Send an email to Carlos Martín Velázquez" data-i18n-aria="a11y.emailIcon">
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75A2.25 2.25 0 0 1 4.5 4.5h15a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 19.5 19.5h-15a2.25 2.25 0 0 1-2.25-2.25V6.75Z" />
               <path stroke-linecap="round" stroke-linejoin="round" d="m3 7 9 6 9-6" />
             </svg>
           </a>
-          <a href="https://github.com/1dardo1" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Perfil de GitHub de Carlos Martín Velázquez">
+          <a href="https://github.com/1dardo1" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Carlos Martín Velázquez's GitHub profile" data-i18n-aria="a11y.githubIcon">
             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.19 1.78 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18.92-.26 1.91-.39 2.89-.39.98 0 1.97.13 2.89.39 2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .3.21.66.79.55A10.51 10.51 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
           </a>
-          <a href="https://www.linkedin.com/in/carlos-martín-velázquez-825393302" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Perfil de LinkedIn de Carlos Martín Velázquez">
+          <a href="https://www.linkedin.com/in/carlos-martín-velázquez-825393302" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Carlos Martín Velázquez's LinkedIn profile" data-i18n-aria="a11y.linkedinIcon">
             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.27 2.38 4.27 5.47v6.27ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
           </a>
         </div>
@@ -320,7 +329,7 @@
 <footer class="py-8 border-t border-slate-200 dark:border-slate-800">
   <div class="mx-auto max-w-6xl px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-500 dark:text-slate-500">
     <p>© <span id="year"></span> Carlos Martín Velázquez</p>
-    <p>Hecho con HTML, Tailwind CSS y JavaScript</p>
+    <p data-i18n="footer.builtWith">Built with HTML, Tailwind CSS, and JavaScript</p>
   </div>
 </footer>
 
