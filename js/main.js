@@ -14,7 +14,7 @@ const translations = {
     nav: { home: 'Home', about: 'About', stack: 'Stack', projects: 'Projects', contact: 'Contact' },
     hero: {
       subtitle:
-        'I build robust backend software and clear interfaces — <strong class="text-slate-800 dark:text-slate-200 font-semibold">.NET, Java and Angular</strong> — with my sights set on growing into <strong class="text-slate-800 dark:text-slate-200 font-semibold">Software Architecture and AI Engineering</strong>.',
+        'I build robust backend software and clean interfaces — <strong class="text-slate-800 dark:text-slate-200 font-semibold">.NET, Java, and Angular</strong> — while working toward <strong class="text-slate-800 dark:text-slate-200 font-semibold">Software Architecture and AI Engineering</strong>.',
       clockLabel: 'Real-time professional experience',
       ctaProjects: 'View projects',
       ctaContact: 'Contact',
@@ -33,8 +33,8 @@ const translations = {
     about: {
       title: 'About me',
       p1: 'I\'m a <strong class="text-slate-800 dark:text-slate-200">Computer Engineer</strong> from Universidad Pontificia de Salamanca. I currently work as a <strong class="text-slate-800 dark:text-slate-200">.NET Backend Developer at Mecalux</strong>, in the logistics sector, developing and maintaining backend solutions for warehouse management systems at real scale.',
-      p2: 'My professional goal is to grow into <strong class="text-slate-800 dark:text-slate-200">Software Architect</strong> or <strong class="text-slate-800 dark:text-slate-200">AI Engineer</strong> roles. To that end, I\'m studying the <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="font-medium text-accent-dark dark:text-accent-light underline underline-offset-2 hover:text-accent">Máster de Desarrollo con IA</a> at Big School, aimed at both junior developers and professionals looking to integrate AI into their daily workflow and move toward AI-powered development roles.',
-      p3: 'Outside of code I\'m a <strong class="text-slate-800 dark:text-slate-200">2nd Dan Judo black belt and federated instructor</strong>. I\'ve spent years training and leading groups of students — something that carries directly into how I work in a team: with consistency, method, and a real ability to teach what I know.',
+      p2: 'My professional goal is to grow into a <strong class="text-slate-800 dark:text-slate-200">Software Architect</strong> or <strong class="text-slate-800 dark:text-slate-200">AI Engineer</strong> role. To that end, I\'m studying the <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="font-medium text-accent-dark dark:text-accent-light underline underline-offset-2 hover:text-accent">Máster de Desarrollo con IA</a> at Big School — a program aimed at both junior developers and professionals looking to bring AI into their daily workflow and move into AI-powered development.',
+      p3: 'Outside of code, I\'m a <strong class="text-slate-800 dark:text-slate-200">2nd Dan Judo black belt and federated instructor</strong>. I\'ve spent years training and leading groups of students — something that carries directly into how I work in a team: with consistency, method, and a real ability to teach what I know.',
       educationTitle: 'Education',
       degreeTitle: "Bachelor's in Computer Engineering",
       masterSubtitle: 'Big School · Ongoing',
@@ -69,7 +69,7 @@ const translations = {
     contact: {
       title: "Let's talk",
       subtitle:
-        "Open to new opportunities as a Backend / Fullstack Developer, moving toward Software Architecture and AI Engineering. If my profile fits what you're looking for, reach out.",
+        "Open to new opportunities as a Backend / Fullstack Developer, while working toward Software Architecture and AI Engineering. If my profile fits what you're looking for, reach out.",
       nameLabel: 'Name',
       emailLabel: 'Your email',
       messageLabel: 'Message',
