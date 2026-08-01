@@ -261,25 +261,56 @@
 
   <!-- ===== CONTACTO ===== -->
   <section id="contacto" class="scroll-mt-16 py-20 sm:py-28 border-t border-slate-200 dark:border-slate-800 bg-slate-100/60 dark:bg-slate-900/30">
-    <div class="mx-auto max-w-6xl px-5 sm:px-8 text-center">
+    <div class="mx-auto max-w-2xl px-5 sm:px-8 text-center">
       <h2 class="section-title">Hablemos</h2>
       <p class="mt-4 max-w-xl mx-auto text-slate-600 dark:text-slate-400">
-        Abierto a nuevas oportunidades como Backend / Fullstack Developer. Si mi perfil encaja con lo que buscas, escríbeme.
+        Abierto a nuevas oportunidades como Backend / Fullstack Developer, con rumbo hacia Arquitectura de Software e Ingeniería de IA. Si mi perfil encaja con lo que buscas, escríbeme.
       </p>
 
-      <div class="mt-10 flex flex-wrap justify-center gap-4">
-        <a href="mailto:crlsmartinvelazquez@gmail.com" class="btn-primary">
-          crlsmartinvelazquez@gmail.com
-        </a>
-      </div>
+      <form id="contact-form" class="mt-10 text-left space-y-4">
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;" tabindex="-1" autocomplete="off">
 
-      <div class="mt-8 flex justify-center gap-4">
-        <a href="https://github.com/1dardo1" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Perfil de GitHub de Carlos Martín Velázquez">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.19 1.78 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18.92-.26 1.91-.39 2.89-.39.98 0 1.97.13 2.89.39 2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .3.21.66.79.55A10.51 10.51 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/carlos-martín-velázquez-825393302" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Perfil de LinkedIn de Carlos Martín Velázquez">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.27 2.38 4.27 5.47v6.27ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
-        </a>
+        <div>
+          <label for="contact-name" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Nombre</label>
+          <input type="text" id="contact-name" name="name" required
+            class="mt-1.5 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-2.5 text-slate-800 dark:text-slate-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors">
+        </div>
+
+        <div>
+          <label for="contact-email" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Tu email</label>
+          <input type="email" id="contact-email" name="email" required
+            class="mt-1.5 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-2.5 text-slate-800 dark:text-slate-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors">
+        </div>
+
+        <div>
+          <label for="contact-message" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Mensaje</label>
+          <textarea id="contact-message" name="message" rows="5" required
+            class="mt-1.5 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-2.5 text-slate-800 dark:text-slate-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors resize-y"></textarea>
+        </div>
+
+        <input type="hidden" name="subject" value="Nuevo mensaje desde el portafolio">
+
+        <button type="submit" class="btn-primary w-full justify-center">Enviar mensaje</button>
+
+        <p id="contact-status" class="text-sm text-center" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="mt-10 pt-8 border-t border-slate-200 dark:border-slate-800">
+        <p class="text-sm text-slate-500 dark:text-slate-500">O escríbeme directamente</p>
+        <div class="mt-4 flex justify-center gap-4">
+          <a href="mailto:crlsmartinvelazquez@gmail.com" class="social-icon" aria-label="Escribir un email a Carlos Martín Velázquez">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75A2.25 2.25 0 0 1 4.5 4.5h15a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 19.5 19.5h-15a2.25 2.25 0 0 1-2.25-2.25V6.75Z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="m3 7 9 6 9-6" />
+            </svg>
+          </a>
+          <a href="https://github.com/1dardo1" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Perfil de GitHub de Carlos Martín Velázquez">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.19 1.78 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18.92-.26 1.91-.39 2.89-.39.98 0 1.97.13 2.89.39 2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .3.21.66.79.55A10.51 10.51 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/carlos-martín-velázquez-825393302" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Perfil de LinkedIn de Carlos Martín Velázquez">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.27 2.38 4.27 5.47v6.27ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>

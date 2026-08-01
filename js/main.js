@@ -95,6 +95,64 @@ setInterval(renderExperienceClock, 1000);
 // ===== Año dinámico en el footer =====
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// ===== Formulario de contacto (Web3Forms) =====
+// Consigue tu access key gratis en https://web3forms.com (solo requiere
+// verificar tu email) y pégala aquí. Mientras esté sin configurar, el
+// formulario avisa y sugiere el email directo.
+const WEB3FORMS_ACCESS_KEY = 'PON_AQUI_TU_ACCESS_KEY';
+
+const contactForm = document.getElementById('contact-form');
+const contactStatus = document.getElementById('contact-status');
+
+function setContactStatus(message, tone) {
+  contactStatus.textContent = message;
+  contactStatus.className = `text-sm text-center ${tone}`;
+}
+
+contactForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  if (!WEB3FORMS_ACCESS_KEY || WEB3FORMS_ACCESS_KEY === 'PON_AQUI_TU_ACCESS_KEY') {
+    setContactStatus(
+      'El formulario todavía no está activo. Escríbeme directamente a crlsmartinvelazquez@gmail.com mientras tanto.',
+      'text-amber-600 dark:text-amber-400'
+    );
+    return;
+  }
+
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+  submitButton.disabled = true;
+  submitButton.textContent = 'Enviando…';
+  setContactStatus('', '');
+
+  const formData = new FormData(contactForm);
+  formData.append('access_key', WEB3FORMS_ACCESS_KEY);
+
+  try {
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { Accept: 'application/json' },
+      body: formData,
+    });
+    const result = await response.json();
+
+    if (result.success) {
+      setContactStatus('¡Mensaje enviado! Te responderé lo antes posible.', 'text-emerald-600 dark:text-emerald-400');
+      contactForm.reset();
+    } else {
+      throw new Error(result.message || 'Error al enviar');
+    }
+  } catch (error) {
+    setContactStatus(
+      'No se pudo enviar el mensaje. Prueba a escribirme directamente a crlsmartinvelazquez@gmail.com.',
+      'text-red-600 dark:text-red-400'
+    );
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = 'Enviar mensaje';
+  }
+});
+
 // ===== Proyectos =====
 // Añade aquí cada proyecto cuando esté listo. Estructura preparada, se
 // renderiza automáticamente y el estado vacío desaparece solo.
