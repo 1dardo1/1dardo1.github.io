@@ -96,10 +96,7 @@ setInterval(renderExperienceClock, 1000);
 document.getElementById('year').textContent = new Date().getFullYear();
 
 // ===== Formulario de contacto (Web3Forms) =====
-// Consigue tu access key gratis en https://web3forms.com (solo requiere
-// verificar tu email) y pégala aquí. Mientras esté sin configurar, el
-// formulario avisa y sugiere el email directo.
-const WEB3FORMS_ACCESS_KEY = 'PON_AQUI_TU_ACCESS_KEY';
+const WEB3FORMS_ACCESS_KEY = '727469d4-4565-4d20-ad83-16e8ee184f54';
 
 const contactForm = document.getElementById('contact-form');
 const contactStatus = document.getElementById('contact-status');
