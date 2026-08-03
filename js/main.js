@@ -32,11 +32,11 @@ const translations = {
     },
     about: {
       title: 'About me',
-      p1: 'I\'m a <strong class="text-slate-800 dark:text-slate-200">Computer Engineer</strong> from Universidad Pontificia de Salamanca. I currently work as a <strong class="text-slate-800 dark:text-slate-200">.NET Backend Developer at Mecalux</strong>, in the logistics sector, developing and maintaining backend solutions for warehouse management systems at real scale.',
+      p1: 'I\'m a <strong class="text-slate-800 dark:text-slate-200">Computer Science and Engineering graduate</strong> from Universidad Pontificia de Salamanca. I currently work as a <strong class="text-slate-800 dark:text-slate-200">.NET Backend Developer at Mecalux</strong>, in the logistics sector, developing and maintaining backend solutions for warehouse management systems at real scale.',
       p2: 'My professional goal is to grow into a <strong class="text-slate-800 dark:text-slate-200">Software Architect</strong> or <strong class="text-slate-800 dark:text-slate-200">AI Engineer</strong> role. To that end, I\'m studying the <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="font-medium text-accent-dark dark:text-accent-light underline underline-offset-2 hover:text-accent">AI-Powered Software Development Master\'s Degree</a> (Máster de Desarrollo con IA) at Big School — a program aimed at both junior developers and professionals looking to bring AI into their daily workflow and move into AI-powered development.',
       p3: 'Outside of code, I\'m a <strong class="text-slate-800 dark:text-slate-200">2nd Dan Judo black belt and federated instructor</strong>. I\'ve spent years training and leading groups of students — something that carries directly into how I work in a team: with consistency, method, and a real ability to teach what I know.',
       educationTitle: 'Education',
-      degreeTitle: "Bachelor's in Computer Engineering",
+      degreeTitle: "Bachelor's in Computer Science and Engineering",
       masterLinkText: '<a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="hover:text-accent">AI-Powered Software Development Master\'s Degree</a>',
       masterSubtitle: 'Big School · Ongoing',
       languagesTitle: 'Languages',
@@ -193,7 +193,7 @@ function applyLanguage(lang) {
       'content',
       lang === 'es'
         ? 'Portafolio de Carlos Martín Velázquez, Backend / Fullstack Developer (.NET · Java · Angular). Ingeniero Informático especializado en soluciones backend robustas.'
-        : 'Portfolio of Carlos Martín Velázquez, Backend / Fullstack Developer (.NET · Java · Angular). Computer Engineer specialized in robust backend solutions.'
+        : 'Portfolio of Carlos Martín Velázquez, Backend / Fullstack Developer (.NET · Java · Angular). Computer Science and Engineering graduate specialized in robust backend solutions.'
     );
   }
   if (metaOgDescription) {
@@ -201,7 +201,7 @@ function applyLanguage(lang) {
       'content',
       lang === 'es'
         ? 'Ingeniero Informático · Backend Developer .NET en Mecalux · Formándome en desarrollo de software potenciado por IA.'
-        : 'Computer Engineer · .NET Backend Developer at Mecalux · Currently studying AI-powered software development.'
+        : 'Computer Science and Engineering graduate · .NET Backend Developer at Mecalux · Currently studying AI-powered software development.'
     );
   }
 
