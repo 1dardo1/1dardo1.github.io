@@ -49,6 +49,7 @@ const translations = {
       tools: 'Tools',
       learning: 'Currently learning',
       selfTaught: 'Self-taught',
+      crossPlatformDev: 'Cross-platform development',
       viaMaster:
         'Via <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-accent">Máster de Desarrollo con IA</a> — Big School',
       softwareArchitecture: 'Software Architecture',
@@ -133,6 +134,7 @@ const translations = {
       tools: 'Herramientas',
       learning: 'Actualmente aprendiendo',
       selfTaught: 'Autoaprendizaje',
+      crossPlatformDev: 'Desarrollo multiplataforma',
       viaMaster:
         'A través del <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-accent">Máster de Desarrollo con IA</a> — Big School',
       softwareArchitecture: 'Arquitectura de Software',
