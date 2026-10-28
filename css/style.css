@@ -52,8 +52,6 @@
   --accent: #3a7d66;
   --accent-hover: #2c6553;
   --accent-text: #2c6553;
-  /* Secondary: fjord blue */
-  --blue: #4a7c9d;
 
   --band-bg: #1f3a35;
   --band-ink: #eef3f0;
@@ -95,7 +93,6 @@
   --line: rgba(231, 239, 236, 0.13);
 
   --accent-text: #74c2a3;
-  --blue: #7fb0cf;
 
   --band-bg: #08100f;
   --band-ink: #e7efec;
@@ -522,10 +519,6 @@ strong {
   padding: 0.5rem 1.25rem 1.25rem;
 }
 
-.mobile-menu.hidden {
-  display: none;
-}
-
 .mobile-menu .nav-link {
   display: block;
   padding: 0.5rem 0;
@@ -636,7 +629,7 @@ strong {
   color: var(--ink);
 }
 
-.hero-title em {
+.hero-title-accent {
   display: block;
   font-style: italic;
   font-weight: 400;
@@ -1420,11 +1413,9 @@ strong {
 
 .form-status.is-success { color: #3f7a4f; }
 .form-status.is-error { color: #b23a2a; }
-.form-status.is-warning { color: #9a6a16; }
 
 .dark .form-status.is-success { color: #8fd19e; }
 .dark .form-status.is-error { color: #ff8b7a; }
-.dark .form-status.is-warning { color: #f2c46b; }
 
 /* ===== Footer ===== */
 .site-footer {
@@ -1549,7 +1540,7 @@ strong {
     margin-top: 0.3rem;
   }
 
-  .hero-title em {
+  .hero-title-accent {
     display: inline;
   }
 

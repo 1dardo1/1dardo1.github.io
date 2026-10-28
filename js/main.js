@@ -1,6 +1,12 @@
 // ===== Translations =====
 const translations = {
   en: {
+    meta: {
+      description:
+        'Portfolio of Carlos Martín Velázquez, Backend / Fullstack Developer (.NET · Java · Angular). Computer Science and Engineering graduate specialized in robust backend solutions.',
+      ogDescription:
+        'Computer Science and Engineering graduate · .NET Backend Developer at Mecalux · Currently studying AI-powered software development.',
+    },
     a11y: {
       skipLink: 'Skip to main content',
       mainNav: 'Main navigation',
@@ -23,7 +29,6 @@ const translations = {
       script: 'More than<br>just code',
     },
     clock: {
-      calculating: 'calculating…',
       comingSoon: 'Coming soon',
       year: 'year',
       years: 'years',
@@ -85,7 +90,6 @@ const translations = {
       sending: 'Sending…',
       directly: 'Or reach me directly',
       print: 'Save this CV as PDF',
-      notConfigured: 'The form isn\'t active yet. Please email me directly at crlsmartinvelazquez@gmail.com in the meantime.',
       success: 'Message sent! I\'ll get back to you as soon as possible.',
       error: 'Something went wrong sending your message. Please try emailing me directly at crlsmartinvelazquez@gmail.com.',
     },
@@ -100,6 +104,12 @@ const translations = {
     },
   },
   es: {
+    meta: {
+      description:
+        'Portafolio de Carlos Martín Velázquez, Backend / Fullstack Developer (.NET · Java · Angular). Ingeniero Informático especializado en soluciones backend robustas.',
+      ogDescription:
+        'Ingeniero Informático · Backend Developer .NET en Mecalux · Formándome en desarrollo de software potenciado por IA.',
+    },
     a11y: {
       skipLink: 'Saltar al contenido principal',
       mainNav: 'Navegación principal',
@@ -122,7 +132,6 @@ const translations = {
       script: 'Más que<br>solo código',
     },
     clock: {
-      calculating: 'calculando…',
       comingSoon: 'Próximamente',
       year: 'año',
       years: 'años',
@@ -184,7 +193,6 @@ const translations = {
       sending: 'Enviando…',
       directly: 'O escríbeme directamente',
       print: 'Guardar este CV en PDF',
-      notConfigured: 'El formulario todavía no está activo. Escríbeme directamente a crlsmartinvelazquez@gmail.com mientras tanto.',
       success: '¡Mensaje enviado! Te responderé lo antes posible.',
       error: 'No se pudo enviar el mensaje. Prueba a escribirme directamente a crlsmartinvelazquez@gmail.com.',
     },
@@ -204,32 +212,29 @@ function t(lang, path) {
   return path.split('.').reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), translations[lang]);
 }
 
+// Storage can be blocked (private mode, disabled cookies); preferences are a nicety, never a requirement.
+function savePreference(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    // Ignore: the choice simply won't persist across visits.
+  }
+}
+
+// Project data is written into HTML templates, so escape it like untrusted text.
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (char) => `&#${char.charCodeAt(0)};`);
+}
+
 let currentLang = document.documentElement.lang === 'es' ? 'es' : 'en';
 
 function applyLanguage(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
-  localStorage.setItem('lang', lang);
+  savePreference('lang', lang);
 
-  document.title = 'Carlos Martín Velázquez — Backend / Fullstack Developer';
-  const metaDescription = document.querySelector('meta[name="description"]');
-  const metaOgDescription = document.querySelector('meta[property="og:description"]');
-  if (metaDescription) {
-    metaDescription.setAttribute(
-      'content',
-      lang === 'es'
-        ? 'Portafolio de Carlos Martín Velázquez, Backend / Fullstack Developer (.NET · Java · Angular). Ingeniero Informático especializado en soluciones backend robustas.'
-        : 'Portfolio of Carlos Martín Velázquez, Backend / Fullstack Developer (.NET · Java · Angular). Computer Science and Engineering graduate specialized in robust backend solutions.'
-    );
-  }
-  if (metaOgDescription) {
-    metaOgDescription.setAttribute(
-      'content',
-      lang === 'es'
-        ? 'Ingeniero Informático · Backend Developer .NET en Mecalux · Formándome en desarrollo de software potenciado por IA.'
-        : 'Computer Science and Engineering graduate · .NET Backend Developer at Mecalux · Currently studying AI-powered software development.'
-    );
-  }
+  document.querySelector('meta[name="description"]').setAttribute('content', t(lang, 'meta.description'));
+  document.querySelector('meta[property="og:description"]').setAttribute('content', t(lang, 'meta.ogDescription'));
 
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const value = t(lang, el.getAttribute('data-i18n'));
@@ -262,7 +267,12 @@ const themeToggle = document.getElementById('theme-toggle');
 const iconSun = document.getElementById('icon-sun');
 const iconMoon = document.getElementById('icon-moon');
 
+// The light/dark bar colours live in the <meta name="theme-color"> tags; read them once.
 const themeColorMetas = document.querySelectorAll('meta[name="theme-color"]');
+const themeColors = {};
+themeColorMetas.forEach((meta) => {
+  themeColors[meta.media.includes('dark') ? 'dark' : 'light'] = meta.content;
+});
 
 function syncThemeIcons() {
   const isDark = root.classList.contains('dark');
@@ -270,14 +280,14 @@ function syncThemeIcons() {
   iconMoon.classList.toggle('hidden', isDark);
   themeToggle.setAttribute('aria-pressed', String(isDark));
   // Keep the mobile browser bar in sync with the chosen theme, not just the OS one.
-  themeColorMetas.forEach((meta) => meta.setAttribute('content', isDark ? '#0f1716' : '#f1f3ef'));
+  themeColorMetas.forEach((meta) => meta.setAttribute('content', themeColors[isDark ? 'dark' : 'light']));
 }
 
 syncThemeIcons();
 
 themeToggle.addEventListener('click', () => {
   root.classList.toggle('dark');
-  localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+  savePreference('theme', root.classList.contains('dark') ? 'dark' : 'light');
   syncThemeIcons();
 });
 
@@ -376,11 +386,6 @@ function setContactStatus(message, tone) {
 contactForm.addEventListener('submit', async (event) => {
   event.preventDefault();
 
-  if (!WEB3FORMS_ACCESS_KEY || WEB3FORMS_ACCESS_KEY === 'PON_AQUI_TU_ACCESS_KEY') {
-    setContactStatus(t(currentLang, 'contact.notConfigured'), 'is-warning');
-    return;
-  }
-
   const submitButton = contactForm.querySelector('button[type="submit"]');
   submitButton.disabled = true;
   submitButton.textContent = t(currentLang, 'contact.sending');
@@ -403,7 +408,7 @@ contactForm.addEventListener('submit', async (event) => {
     } else {
       throw new Error(result.message || 'Submit error');
     }
-  } catch (error) {
+  } catch {
     setContactStatus(t(currentLang, 'contact.error'), 'is-error');
   } finally {
     submitButton.disabled = false;
@@ -444,7 +449,7 @@ const projects = [
 ];
 
 function circleLink(url, label) {
-  return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="circle-link"><span class="circle" aria-hidden="true">→</span>${label}</a>`;
+  return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="circle-link"><span class="circle" aria-hidden="true">→</span>${label}</a>`;
 }
 
 function renderProjects() {
@@ -466,16 +471,16 @@ function renderProjects() {
       <article class="project-card">
         ${
           project.image
-            ? `<div class="project-media"><img src="${project.image}" alt="${project.title} screenshot" loading="lazy"></div>`
+            ? `<div class="project-media"><img src="${escapeHtml(project.image)}" alt="${escapeHtml(project.title)} screenshot" loading="lazy"></div>`
             : ''
         }
         <div class="project-body">
-          ${project.kicker ? `<p class="project-kicker">${project.kicker[currentLang]}</p>` : ''}
-          <h3 class="project-title">${project.title}</h3>
-          <p class="project-desc">${project.description[currentLang]}</p>
-          <p class="project-role"><strong>${t(currentLang, 'projects.roleLabel')}</strong> ${project.role[currentLang]}</p>
+          ${project.kicker ? `<p class="project-kicker">${escapeHtml(project.kicker[currentLang])}</p>` : ''}
+          <h3 class="project-title">${escapeHtml(project.title)}</h3>
+          <p class="project-desc">${escapeHtml(project.description[currentLang])}</p>
+          <p class="project-role"><strong>${t(currentLang, 'projects.roleLabel')}</strong> ${escapeHtml(project.role[currentLang])}</p>
           <div class="badges">
-            ${project.stack.map((tech) => `<span class="badge">${tech}</span>`).join('')}
+            ${project.stack.map((tech) => `<span class="badge">${escapeHtml(tech)}</span>`).join('')}
           </div>
           <div class="project-links">
             ${project.repoUrl ? circleLink(project.repoUrl, t(currentLang, 'projects.code')) : ''}
@@ -519,11 +524,14 @@ const ridgeLayers = hero.querySelectorAll('.parallax-layer');
 // Back layers move more than front ones, like the layered landscapes in the references.
 const RIDGE_SPEEDS = { l1: 0.22, l2: 0.15, l3: 0.08, l4: 0 };
 let parallaxQueued = false;
+// Cached so scrolling never forces a layout read; refreshed when the viewport changes.
+let heroHeight = hero.offsetHeight;
+window.addEventListener('resize', () => { heroHeight = hero.offsetHeight; }, { passive: true });
 
 function applyParallax() {
   parallaxQueued = false;
   const y = window.scrollY;
-  if (y > hero.offsetHeight) return;
+  if (y > heroHeight) return;
   heroSun.style.transform = `translate3d(0, ${y * Number(heroSun.dataset.speed)}px, 0)`;
   ridgeLayers.forEach((layer) => {
     layer.style.transform = `translate(0, ${y * RIDGE_SPEEDS[layer.dataset.depth] * -0.35}px)`;
