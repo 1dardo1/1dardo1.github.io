@@ -65,6 +65,7 @@
   --btn-bg: var(--accent);
   --btn-ink: #ffffff;
 
+  --ridge-edge: var(--fiber);
   --ridge-1: #c7d7de;
   --ridge-2: #7196ac;
   --ridge-3: #2f604f;
@@ -103,9 +104,11 @@
   --band-card: rgba(231, 239, 236, 0.04);
   --band-accent: #74c2a3;
 
-  --ridge-1: #1c2d35;
-  --ridge-2: #16313b;
-  --ridge-3: #0f231d;
+  /* Moonlit ranges: light enough to read against the night sky */
+  --ridge-edge: #5d7884;
+  --ridge-1: #3d5a68;
+  --ridge-2: #2c4d5e;
+  --ridge-3: #1f4b3d;
   --sun-1: #eef3f5;
   --sun-2: #9fb6c3;
 
@@ -790,7 +793,7 @@ strong {
 }
 
 .hero-ridges .fiber {
-  fill: var(--fiber);
+  fill: var(--ridge-edge);
 }
 
 .hero-ridges .l1 { fill: var(--ridge-1); }
