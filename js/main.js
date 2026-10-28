@@ -10,15 +10,20 @@ const translations = {
       emailIcon: "Send an email to Carlos Martín Velázquez",
       githubIcon: "Carlos Martín Velázquez's GitHub profile",
       linkedinIcon: "Carlos Martín Velázquez's LinkedIn profile",
+      focusAreas: 'Focus areas',
     },
-    nav: { home: 'Home', about: 'About', stack: 'Stack', projects: 'Projects', contact: 'Contact' },
+    brand: { tagline: 'Software that lasts' },
+    nav: { home: 'Home', about: 'About', stack: 'Stack', projects: 'Projects', contact: 'Contact', cta: "Let's talk" },
     hero: {
       subtitle:
-        'I build reliable backend software and clean interfaces — <strong class="text-slate-800 dark:text-slate-200 font-semibold">.NET, Java, and Angular</strong> — while working toward <strong class="text-slate-800 dark:text-slate-200 font-semibold">Software Architecture and AI Engineering</strong>.',
+        'I build reliable backend software and clean interfaces — <strong>.NET, Java, and Angular</strong> — while working toward <strong>Software Architecture and AI Engineering</strong>.',
       clockLabel: 'Real-time professional experience',
       ctaProjects: 'View projects',
       ctaContact: 'Contact',
       location: 'Spain · Open to remote / hybrid',
+      pillarArchitecture: 'Architecture',
+      pillarAi: 'AI Engineering',
+      script: 'More than<br>just code',
     },
     clock: {
       calculating: 'calculating…',
@@ -31,18 +36,20 @@ const translations = {
       days: 'days',
     },
     about: {
+      eyebrow: 'Who I am',
       title: 'About me',
-      p1: 'I\'m a <strong class="text-slate-800 dark:text-slate-200">Computer Science and Engineering graduate</strong> from Universidad Pontificia de Salamanca. I currently work as a <strong class="text-slate-800 dark:text-slate-200">.NET Backend Developer at Mecalux</strong>, in the logistics sector, developing and maintaining backend solutions for warehouse management systems at real scale.',
-      p2: 'My professional goal is to grow into a <strong class="text-slate-800 dark:text-slate-200">Software Architect</strong> or <strong class="text-slate-800 dark:text-slate-200">AI Engineer</strong> role. To that end, I\'m studying the <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="font-medium text-accent-dark dark:text-accent-light underline underline-offset-2 hover:text-accent">AI-Powered Software Development Master\'s Degree</a> (Máster de Desarrollo con IA) at Big School — a program aimed at both junior developers and professionals looking to bring AI into their daily workflow and move into AI-powered development.',
-      p3: 'Outside of code, I\'m a <strong class="text-slate-800 dark:text-slate-200">2nd Dan Judo black belt and federated instructor</strong>. I\'ve spent years training and leading groups of students — something that carries directly into how I work in a team: with consistency, method, and a real ability to teach what I know.',
+      p1: 'I\'m a <strong>Computer Science and Engineering graduate</strong> from Universidad Pontificia de Salamanca. I currently work as a <strong>.NET Backend Developer at Mecalux</strong>, in the logistics sector, developing and maintaining backend solutions for warehouse management systems at real scale.',
+      p2: 'My professional goal is to grow into a <strong>Software Architect</strong> or <strong>AI Engineer</strong> role. To that end, I\'m studying the <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="link">AI-Powered Software Development Master\'s Degree</a> (Máster de Desarrollo con IA) at Big School — a program aimed at both junior developers and professionals looking to bring AI into their daily workflow and move into AI-powered development.',
+      p3: 'Outside of code, I\'m a <strong>2nd Dan Judo black belt and federated instructor</strong>. I\'ve spent years training and leading groups of students — something that carries directly into how I work in a team: with consistency, method, and a real ability to teach what I know.',
       educationTitle: 'Education',
       degreeTitle: "Bachelor's in Computer Science and Engineering",
-      masterLinkText: '<a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="hover:text-accent">AI-Powered Software Development Master\'s Degree</a>',
+      masterLinkText: '<a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer">AI-Powered Software Development Master\'s Degree</a>',
       masterSubtitle: 'Big School · Ongoing',
       languagesTitle: 'Languages',
       languagesValue: 'English — C1 (Cambridge)',
     },
     stack: {
+      eyebrow: 'Toolkit',
       title: 'Engineering Stack',
       subtitle: 'Technologies I use daily or that are an active part of my training.',
       crossPlatform: 'Cross-platform',
@@ -52,7 +59,7 @@ const translations = {
       selfTaught: 'Self-taught',
       crossPlatformDev: 'Cross-platform development',
       viaMaster:
-        'Via the <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-accent">AI-Powered Software Development Master\'s Degree</a> — Big School',
+        'Via the <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="link">AI-Powered Software Development Master\'s Degree</a> — Big School',
       softwareArchitecture: 'Software Architecture',
       aiAssistedDev: 'AI-assisted development',
       aiTesting: 'AI-assisted testing &amp; code review',
@@ -60,6 +67,7 @@ const translations = {
       security: 'Security',
     },
     projects: {
+      eyebrow: 'Selected work',
       title: 'Projects',
       subtitle: 'A selection of projects with the problem they solve, my contribution, and the stack used.',
       emptyText: "I'm documenting my projects in detail — problem, role, stack, and results. Coming very soon.",
@@ -69,6 +77,7 @@ const translations = {
       demo: 'Demo',
     },
     contact: {
+      eyebrow: 'Get in touch',
       title: "Let's talk",
       subtitle:
         "Open to new opportunities as a Backend / Fullstack Developer, while working toward Software Architecture and AI Engineering. If my profile fits what you're looking for, reach out.",
@@ -82,8 +91,14 @@ const translations = {
       success: 'Message sent! I\'ll get back to you as soon as possible.',
       error: 'Something went wrong sending your message. Please try emailing me directly at crlsmartinvelazquez@gmail.com.',
     },
+    values: {
+      lead: 'A steadier way<br>to build software.',
+      architecture: 'Clean architecture',
+      tested: 'Tested &amp; reviewed',
+      ai: 'AI-assisted',
+    },
     footer: {
-      builtWith: 'Built with HTML, Tailwind CSS, and JavaScript',
+      builtWith: 'Built with HTML, CSS, and JavaScript',
     },
   },
   es: {
@@ -96,15 +111,20 @@ const translations = {
       emailIcon: 'Escribir un email a Carlos Martín Velázquez',
       githubIcon: 'Perfil de GitHub de Carlos Martín Velázquez',
       linkedinIcon: 'Perfil de LinkedIn de Carlos Martín Velázquez',
+      focusAreas: 'Áreas de enfoque',
     },
-    nav: { home: 'Inicio', about: 'Sobre mí', stack: 'Stack', projects: 'Proyectos', contact: 'Contacto' },
+    brand: { tagline: 'Software que perdura' },
+    nav: { home: 'Inicio', about: 'Sobre mí', stack: 'Stack', projects: 'Proyectos', contact: 'Contacto', cta: 'Hablemos' },
     hero: {
       subtitle:
-        'Construyo software backend robusto e interfaces claras — <strong class="text-slate-800 dark:text-slate-200 font-semibold">.NET, Java y Angular</strong> — con el objetivo de evolucionar hacia <strong class="text-slate-800 dark:text-slate-200 font-semibold">Arquitectura de Software e Ingeniería de IA</strong>.',
+        'Construyo software backend robusto e interfaces claras — <strong>.NET, Java y Angular</strong> — con el objetivo de evolucionar hacia <strong>Arquitectura de Software e Ingeniería de IA</strong>.',
       clockLabel: 'Experiencia profesional en tiempo real',
       ctaProjects: 'Ver proyectos',
       ctaContact: 'Contactar',
       location: 'España · Abierto a remoto / híbrido',
+      pillarArchitecture: 'Arquitectura',
+      pillarAi: 'Ingeniería de IA',
+      script: 'Más que<br>solo código',
     },
     clock: {
       calculating: 'calculando…',
@@ -117,18 +137,20 @@ const translations = {
       days: 'días',
     },
     about: {
+      eyebrow: 'Quién soy',
       title: 'Sobre mí',
-      p1: 'Soy <strong class="text-slate-800 dark:text-slate-200">Ingeniero Informático</strong> por la Universidad Pontificia de Salamanca. Actualmente trabajo como <strong class="text-slate-800 dark:text-slate-200">Backend Developer .NET en Mecalux</strong>, dentro del sector logístico, desarrollando y manteniendo soluciones backend para sistemas de gestión de almacenes a escala real.',
-      p2: 'Mi objetivo profesional es evolucionar hacia puestos de <strong class="text-slate-800 dark:text-slate-200">Arquitecto de Software</strong> o <strong class="text-slate-800 dark:text-slate-200">Ingeniero de IA</strong>. Para ello curso el <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="font-medium text-accent-dark dark:text-accent-light underline underline-offset-2 hover:text-accent">Máster de Desarrollo con IA</a> en Big School, dirigido tanto a desarrolladores junior como a profesionales que buscan integrar la IA en su flujo de trabajo diario y evolucionar hacia roles de desarrollo potenciado por IA.',
-      p3: 'Fuera del código soy <strong class="text-slate-800 dark:text-slate-200">2º Dan de Judo, cinturón negro y monitor federado</strong>. Llevo años formando y liderando grupos de alumnos — algo que traslado directamente a cómo trabajo en equipo: con constancia, método y capacidad real de enseñar lo que sé.',
+      p1: 'Soy <strong>Ingeniero Informático</strong> por la Universidad Pontificia de Salamanca. Actualmente trabajo como <strong>Backend Developer .NET en Mecalux</strong>, dentro del sector logístico, desarrollando y manteniendo soluciones backend para sistemas de gestión de almacenes a escala real.',
+      p2: 'Mi objetivo profesional es evolucionar hacia puestos de <strong>Arquitecto de Software</strong> o <strong>Ingeniero de IA</strong>. Para ello curso el <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="link">Máster de Desarrollo con IA</a> en Big School, dirigido tanto a desarrolladores junior como a profesionales que buscan integrar la IA en su flujo de trabajo diario y evolucionar hacia roles de desarrollo potenciado por IA.',
+      p3: 'Fuera del código soy <strong>2º Dan de Judo, cinturón negro y monitor federado</strong>. Llevo años formando y liderando grupos de alumnos — algo que traslado directamente a cómo trabajo en equipo: con constancia, método y capacidad real de enseñar lo que sé.',
       educationTitle: 'Formación',
       degreeTitle: 'Grado en Ingeniería Informática',
-      masterLinkText: '<a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="hover:text-accent">Máster de Desarrollo con IA</a>',
+      masterLinkText: '<a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer">Máster de Desarrollo con IA</a>',
       masterSubtitle: 'Big School · En curso',
       languagesTitle: 'Idiomas',
       languagesValue: 'Inglés — C1 (Cambridge)',
     },
     stack: {
+      eyebrow: 'Herramientas',
       title: 'Stack de Ingeniería',
       subtitle: 'Tecnologías que uso a diario o que forman parte activa de mi formación.',
       crossPlatform: 'Multiplataforma',
@@ -138,7 +160,7 @@ const translations = {
       selfTaught: 'Autoaprendizaje',
       crossPlatformDev: 'Desarrollo multiplataforma',
       viaMaster:
-        'A través del <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-accent">Máster de Desarrollo con IA</a> — Big School',
+        'A través del <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="link">Máster de Desarrollo con IA</a> — Big School',
       softwareArchitecture: 'Arquitectura de Software',
       aiAssistedDev: 'Desarrollo asistido por IA',
       aiTesting: 'Pruebas y revisión de código asistidas por IA',
@@ -146,6 +168,7 @@ const translations = {
       security: 'Seguridad',
     },
     projects: {
+      eyebrow: 'Trabajo seleccionado',
       title: 'Proyectos',
       subtitle: 'Selección de proyectos con el problema que resuelven, mi contribución y el stack utilizado.',
       emptyText: 'Estoy documentando mis proyectos en detalle — problema, rol, stack y resultados. Disponibles muy pronto.',
@@ -155,6 +178,7 @@ const translations = {
       demo: 'Demo',
     },
     contact: {
+      eyebrow: 'Contacto',
       title: 'Hablemos',
       subtitle:
         'Abierto a nuevas oportunidades como Backend / Fullstack Developer, con el objetivo de evolucionar hacia Arquitectura de Software e Ingeniería de IA. Si mi perfil encaja con lo que buscas, escríbeme.',
@@ -168,8 +192,14 @@ const translations = {
       success: '¡Mensaje enviado! Te responderé lo antes posible.',
       error: 'No se pudo enviar el mensaje. Prueba a escribirme directamente a crlsmartinvelazquez@gmail.com.',
     },
+    values: {
+      lead: 'Una forma más sólida<br>de construir software.',
+      architecture: 'Arquitectura limpia',
+      tested: 'Testeado y revisado',
+      ai: 'Asistido por IA',
+    },
     footer: {
-      builtWith: 'Hecho con HTML, Tailwind CSS y JavaScript',
+      builtWith: 'Hecho con HTML, CSS y JavaScript',
     },
   },
 };
@@ -222,6 +252,7 @@ function applyLanguage(lang) {
 
   renderExperienceClock();
   renderProjects();
+  updateRail();
 }
 
 // ===== Language toggle =====
@@ -333,14 +364,14 @@ const contactStatus = document.getElementById('contact-status');
 
 function setContactStatus(message, tone) {
   contactStatus.textContent = message;
-  contactStatus.className = `text-sm text-center ${tone}`;
+  contactStatus.className = `form-status ${tone}`;
 }
 
 contactForm.addEventListener('submit', async (event) => {
   event.preventDefault();
 
   if (!WEB3FORMS_ACCESS_KEY || WEB3FORMS_ACCESS_KEY === 'PON_AQUI_TU_ACCESS_KEY') {
-    setContactStatus(t(currentLang, 'contact.notConfigured'), 'text-amber-600 dark:text-amber-400');
+    setContactStatus(t(currentLang, 'contact.notConfigured'), 'is-warning');
     return;
   }
 
@@ -361,13 +392,13 @@ contactForm.addEventListener('submit', async (event) => {
     const result = await response.json();
 
     if (result.success) {
-      setContactStatus(t(currentLang, 'contact.success'), 'text-emerald-600 dark:text-emerald-400');
+      setContactStatus(t(currentLang, 'contact.success'), 'is-success');
       contactForm.reset();
     } else {
       throw new Error(result.message || 'Submit error');
     }
   } catch (error) {
-    setContactStatus(t(currentLang, 'contact.error'), 'text-red-600 dark:text-red-400');
+    setContactStatus(t(currentLang, 'contact.error'), 'is-error');
   } finally {
     submitButton.disabled = false;
     submitButton.textContent = t(currentLang, 'contact.submit');
@@ -380,6 +411,7 @@ contactForm.addEventListener('submit', async (event) => {
 const projects = [
   {
     title: 'LCP Builder',
+    kicker: { en: 'Flutter · Open source', es: 'Flutter · Código abierto' },
     description: {
       en: 'Cross-platform visual editor for building Lancer TTRPG content packs (.lcp) without hand-writing JSON: the game master fills out forms and the app generates the pack ready to import into COMP/CON.',
       es: 'Editor visual multiplataforma para crear paquetes de contenido (.lcp) del TTRPG Lancer sin escribir JSON a mano: el máster rellena formularios y la app genera el pack listo para importar en COMP/CON.',
@@ -395,6 +427,7 @@ const projects = [
   },
   // {
   //   title: 'Project name',
+  //   kicker: { en: '...', es: '...' },
   //   description: { en: '...', es: '...' },
   //   role: { en: '...', es: '...' },
   //   stack: ['C#', '.NET', 'Angular'],
@@ -403,6 +436,10 @@ const projects = [
   //   image: '',
   // },
 ];
+
+function circleLink(url, label) {
+  return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="circle-link"><span class="circle" aria-hidden="true">→</span>${label}</a>`;
+}
 
 function renderProjects() {
   const grid = document.getElementById('projects-grid');
@@ -423,25 +460,105 @@ function renderProjects() {
       <article class="project-card">
         ${
           project.image
-            ? `<img src="${project.image}" alt="${project.title} screenshot" class="w-full h-44 object-cover object-top" loading="lazy">`
+            ? `<div class="project-media"><img src="${project.image}" alt="${project.title} screenshot" loading="lazy"></div>`
             : ''
         }
-        <div class="p-6 flex flex-col gap-3 flex-1">
-          <h3 class="text-lg font-bold text-slate-900 dark:text-white">${project.title}</h3>
-          <p class="text-sm text-slate-600 dark:text-slate-400">${project.description[currentLang]}</p>
-          <p class="text-sm text-slate-500 dark:text-slate-500"><strong>${t(currentLang, 'projects.roleLabel')}</strong> ${project.role[currentLang]}</p>
-          <div class="flex flex-wrap gap-2 mt-1">
+        <div class="project-body">
+          ${project.kicker ? `<p class="project-kicker">${project.kicker[currentLang]}</p>` : ''}
+          <h3 class="project-title">${project.title}</h3>
+          <p class="project-desc">${project.description[currentLang]}</p>
+          <p class="project-role"><strong>${t(currentLang, 'projects.roleLabel')}</strong> ${project.role[currentLang]}</p>
+          <div class="badges">
             ${project.stack.map((tech) => `<span class="badge">${tech}</span>`).join('')}
           </div>
-          <div class="mt-auto pt-4 flex gap-3">
-            ${project.repoUrl ? `<a href="${project.repoUrl}" target="_blank" rel="noopener noreferrer" class="btn-secondary !py-2 !px-4 !text-sm">${t(currentLang, 'projects.code')}</a>` : ''}
-            ${project.demoUrl ? `<a href="${project.demoUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary !py-2 !px-4 !text-sm">${t(currentLang, 'projects.demo')}</a>` : ''}
+          <div class="project-links">
+            ${project.repoUrl ? circleLink(project.repoUrl, t(currentLang, 'projects.code')) : ''}
+            ${project.demoUrl ? circleLink(project.demoUrl, t(currentLang, 'projects.demo')) : ''}
           </div>
         </div>
       </article>
     `
     )
     .join('');
+}
+
+// ===== Scroll reveal =====
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const revealTargets = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window && !prefersReducedMotion) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      });
+    },
+    { rootMargin: '0px 0px -10% 0px', threshold: 0.1 }
+  );
+  revealTargets.forEach((el, i) => {
+    // Small stagger for siblings revealed together (e.g. stack cards).
+    el.style.transitionDelay = `${(i % 4) * 80}ms`;
+    revealObserver.observe(el);
+  });
+} else {
+  revealTargets.forEach((el) => el.classList.add('is-visible'));
+}
+
+// ===== Hero parallax (sun + mountain ridges) =====
+const hero = document.getElementById('inicio');
+const heroSun = hero.querySelector('.hero-sun');
+const ridgeLayers = hero.querySelectorAll('.parallax-layer');
+// Back layers move more than front ones, like the layered landscapes in the references.
+const RIDGE_SPEEDS = { l1: 0.22, l2: 0.15, l3: 0.08, l4: 0 };
+let parallaxQueued = false;
+
+function applyParallax() {
+  parallaxQueued = false;
+  const y = window.scrollY;
+  if (y > hero.offsetHeight) return;
+  heroSun.style.transform = `translate3d(0, ${y * Number(heroSun.dataset.speed)}px, 0)`;
+  ridgeLayers.forEach((layer) => {
+    layer.style.transform = `translate(0, ${y * RIDGE_SPEEDS[layer.dataset.depth] * -0.35}px)`;
+  });
+}
+
+if (!prefersReducedMotion) {
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (parallaxQueued) return;
+      parallaxQueued = true;
+      requestAnimationFrame(applyParallax);
+    },
+    { passive: true }
+  );
+}
+
+// ===== Section rail (current section counter) =====
+const sections = document.querySelectorAll('main [data-section]');
+const railIndex = document.getElementById('rail-index');
+const railLabel = document.getElementById('rail-label');
+let activeSection = sections[0];
+
+function updateRail() {
+  railIndex.textContent = activeSection.dataset.section;
+  railLabel.textContent = t(currentLang, activeSection.dataset.label);
+}
+
+if ('IntersectionObserver' in window) {
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        activeSection = entry.target;
+        updateRail();
+      });
+    },
+    { rootMargin: '-45% 0px -50% 0px' }
+  );
+  sections.forEach((section) => sectionObserver.observe(section));
 }
 
 applyLanguage(currentLang);
