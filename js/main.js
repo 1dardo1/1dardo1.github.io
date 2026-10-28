@@ -13,9 +13,8 @@ const translations = {
       focusAreas: 'Focus areas',
     },
     brand: { tagline: 'Software that lasts' },
-    nav: { home: 'Home', about: 'My story', stack: 'Stack', projects: 'Projects', contact: 'Contact', cta: "Let's talk" },
+    nav: { home: 'Home', about: 'About', stack: 'Stack', projects: 'Projects', contact: 'Contact', cta: "Let's talk" },
     hero: {
-      greeting: "Hej! I'm",
       subtitle:
         'I build reliable backend software and clean interfaces — <strong>.NET, Java, and Angular</strong> — while working toward <strong>Software Architecture and AI Engineering</strong>.',
       clockLabel: 'Real-time professional experience',
@@ -37,19 +36,11 @@ const translations = {
       days: 'days',
     },
     about: {
-      eyebrow: 'My story',
-      title: 'A saga in four chapters',
-      intro: "Where I come from, what I do today, where I'm headed — and what I bring from the tatami.",
-      ch1Title: 'Roots',
-      ch1: 'I\'m a <strong>Computer Science and Engineering graduate</strong> from Universidad Pontificia de Salamanca.',
-      ch2Title: 'The forge',
-      ch2: 'I currently work as a <strong>.NET Backend Developer at Mecalux</strong>, in the logistics sector, developing and maintaining backend solutions for warehouse management systems at real scale.',
-      ch3Title: 'The road ahead',
-      ch3: 'My professional goal is to grow into a <strong>Software Architect</strong> or <strong>AI Engineer</strong> role. To that end, I\'m studying the <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="link">AI-Powered Software Development Master\'s Degree</a> (Máster de Desarrollo con IA) at Big School.',
-      ch4Title: 'The dojo',
-      ch4: 'Outside of code, I\'m a <strong>2nd Dan Judo black belt and federated instructor</strong>. I\'ve spent years training and leading groups of students — something that carries directly into how I work in a team: with consistency, method, and a real ability to teach what I know.',
-      glanceTitle: 'At a glance',
-      masterNote: 'The master\'s is aimed at both junior developers and professionals looking to bring AI into their daily workflow and move into AI-powered development.',
+      eyebrow: 'Who I am',
+      title: 'About me',
+      p1: 'I\'m a <strong>Computer Science and Engineering graduate</strong> from Universidad Pontificia de Salamanca. I currently work as a <strong>.NET Backend Developer at Mecalux</strong>, in the logistics sector, developing and maintaining backend solutions for warehouse management systems at real scale.',
+      p2: 'My professional goal is to grow into a <strong>Software Architect</strong> or <strong>AI Engineer</strong> role. To that end, I\'m studying the <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="link">AI-Powered Software Development Master\'s Degree</a> (Máster de Desarrollo con IA) at Big School — a program aimed at both junior developers and professionals looking to bring AI into their daily workflow and move into AI-powered development.',
+      p3: 'Outside of code, I\'m a <strong>2nd Dan Judo black belt and federated instructor</strong>. I\'ve spent years training and leading groups of students — something that carries directly into how I work in a team: with consistency, method, and a real ability to teach what I know.',
       educationTitle: 'Education',
       degreeTitle: "Bachelor's in Computer Science and Engineering",
       masterLinkText: '<a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer">AI-Powered Software Development Master\'s Degree</a>',
@@ -58,14 +49,8 @@ const translations = {
       languagesValue: 'English — C1 (Cambridge)',
     },
     stack: {
-      eyebrow: 'My toolkit',
+      eyebrow: 'Toolkit',
       title: 'Engineering Stack',
-      meaningBackend: 'Tiwaz · structure',
-      meaningFrontend: 'Kenaz · the torch of craft',
-      meaningCross: 'Ehwaz · movement',
-      meaningDatabases: 'Othala · what is kept',
-      meaningTools: 'Uruz · strength',
-      meaningLearning: 'Berkano · growth',
       subtitle: 'Technologies I use daily or that are an active part of my training.',
       crossPlatform: 'Cross-platform',
       databases: 'Databases',
@@ -82,7 +67,7 @@ const translations = {
       security: 'Security',
     },
     projects: {
-      eyebrow: "Things I've built",
+      eyebrow: 'Selected work',
       title: 'Projects',
       subtitle: 'A selection of projects with the problem they solve, my contribution, and the stack used.',
       emptyText: "I'm documenting my projects in detail — problem, role, stack, and results. Coming very soon.",
@@ -92,7 +77,7 @@ const translations = {
       demo: 'Demo',
     },
     contact: {
-      eyebrow: 'Send a raven',
+      eyebrow: 'Get in touch',
       title: "Let's talk",
       subtitle:
         "Open to new opportunities as a Backend / Fullstack Developer, while working toward Software Architecture and AI Engineering. If my profile fits what you're looking for, reach out.",
@@ -129,9 +114,8 @@ const translations = {
       focusAreas: 'Áreas de enfoque',
     },
     brand: { tagline: 'Software que perdura' },
-    nav: { home: 'Inicio', about: 'Mi historia', stack: 'Stack', projects: 'Proyectos', contact: 'Contacto', cta: 'Hablemos' },
+    nav: { home: 'Inicio', about: 'Sobre mí', stack: 'Stack', projects: 'Proyectos', contact: 'Contacto', cta: 'Hablemos' },
     hero: {
-      greeting: '¡Hej! Soy',
       subtitle:
         'Construyo software backend robusto e interfaces claras — <strong>.NET, Java y Angular</strong> — con el objetivo de evolucionar hacia <strong>Arquitectura de Software e Ingeniería de IA</strong>.',
       clockLabel: 'Experiencia profesional en tiempo real',
@@ -153,19 +137,11 @@ const translations = {
       days: 'días',
     },
     about: {
-      eyebrow: 'Mi historia',
-      title: 'Una saga en cuatro capítulos',
-      intro: 'De dónde vengo, qué hago hoy, hacia dónde voy — y lo que traigo del tatami.',
-      ch1Title: 'Raíces',
-      ch1: 'Soy <strong>Ingeniero Informático</strong> por la Universidad Pontificia de Salamanca.',
-      ch2Title: 'La forja',
-      ch2: 'Actualmente trabajo como <strong>Backend Developer .NET en Mecalux</strong>, dentro del sector logístico, desarrollando y manteniendo soluciones backend para sistemas de gestión de almacenes a escala real.',
-      ch3Title: 'El camino',
-      ch3: 'Mi objetivo profesional es evolucionar hacia puestos de <strong>Arquitecto de Software</strong> o <strong>Ingeniero de IA</strong>. Para ello curso el <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="link">Máster de Desarrollo con IA</a> en Big School.',
-      ch4Title: 'El dojo',
-      ch4: 'Fuera del código soy <strong>2º Dan de Judo, cinturón negro y monitor federado</strong>. Llevo años formando y liderando grupos de alumnos — algo que traslado directamente a cómo trabajo en equipo: con constancia, método y capacidad real de enseñar lo que sé.',
-      glanceTitle: 'De un vistazo',
-      masterNote: 'El máster está dirigido tanto a desarrolladores junior como a profesionales que buscan integrar la IA en su flujo de trabajo diario y evolucionar hacia roles de desarrollo potenciado por IA.',
+      eyebrow: 'Quién soy',
+      title: 'Sobre mí',
+      p1: 'Soy <strong>Ingeniero Informático</strong> por la Universidad Pontificia de Salamanca. Actualmente trabajo como <strong>Backend Developer .NET en Mecalux</strong>, dentro del sector logístico, desarrollando y manteniendo soluciones backend para sistemas de gestión de almacenes a escala real.',
+      p2: 'Mi objetivo profesional es evolucionar hacia puestos de <strong>Arquitecto de Software</strong> o <strong>Ingeniero de IA</strong>. Para ello curso el <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="link">Máster de Desarrollo con IA</a> en Big School, dirigido tanto a desarrolladores junior como a profesionales que buscan integrar la IA en su flujo de trabajo diario y evolucionar hacia roles de desarrollo potenciado por IA.',
+      p3: 'Fuera del código soy <strong>2º Dan de Judo, cinturón negro y monitor federado</strong>. Llevo años formando y liderando grupos de alumnos — algo que traslado directamente a cómo trabajo en equipo: con constancia, método y capacidad real de enseñar lo que sé.',
       educationTitle: 'Formación',
       degreeTitle: 'Grado en Ingeniería Informática',
       masterLinkText: '<a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer">Máster de Desarrollo con IA</a>',
@@ -174,14 +150,8 @@ const translations = {
       languagesValue: 'Inglés — C1 (Cambridge)',
     },
     stack: {
-      eyebrow: 'Mis herramientas',
+      eyebrow: 'Herramientas',
       title: 'Stack de Ingeniería',
-      meaningBackend: 'Tiwaz · estructura',
-      meaningFrontend: 'Kenaz · la antorcha del oficio',
-      meaningCross: 'Ehwaz · movimiento',
-      meaningDatabases: 'Othala · lo que se guarda',
-      meaningTools: 'Uruz · fuerza',
-      meaningLearning: 'Berkano · crecimiento',
       subtitle: 'Tecnologías que uso a diario o que forman parte activa de mi formación.',
       crossPlatform: 'Multiplataforma',
       databases: 'Bases de datos',
@@ -198,7 +168,7 @@ const translations = {
       security: 'Seguridad',
     },
     projects: {
-      eyebrow: 'Lo que he construido',
+      eyebrow: 'Trabajo seleccionado',
       title: 'Proyectos',
       subtitle: 'Selección de proyectos con el problema que resuelven, mi contribución y el stack utilizado.',
       emptyText: 'Estoy documentando mis proyectos en detalle — problema, rol, stack y resultados. Disponibles muy pronto.',
@@ -208,7 +178,7 @@ const translations = {
       demo: 'Demo',
     },
     contact: {
-      eyebrow: 'Envía un cuervo',
+      eyebrow: 'Contacto',
       title: 'Hablemos',
       subtitle:
         'Abierto a nuevas oportunidades como Backend / Fullstack Developer, con el objetivo de evolucionar hacia Arquitectura de Software e Ingeniería de IA. Si mi perfil encaja con lo que buscas, escríbeme.',
@@ -467,8 +437,8 @@ const projects = [
   // },
 ];
 
-function diamondLink(url, label) {
-  return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="diamond-link"><span class="diamond" aria-hidden="true"><span>→</span></span>${label}</a>`;
+function circleLink(url, label) {
+  return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="circle-link"><span class="circle" aria-hidden="true">→</span>${label}</a>`;
 }
 
 function renderProjects() {
@@ -490,7 +460,7 @@ function renderProjects() {
       <article class="project-card">
         ${
           project.image
-            ? `<div class="project-media carved"><img src="${project.image}" alt="${project.title} screenshot" loading="lazy"></div>`
+            ? `<div class="project-media"><img src="${project.image}" alt="${project.title} screenshot" loading="lazy"></div>`
             : ''
         }
         <div class="project-body">
@@ -502,8 +472,8 @@ function renderProjects() {
             ${project.stack.map((tech) => `<span class="badge">${tech}</span>`).join('')}
           </div>
           <div class="project-links">
-            ${project.repoUrl ? diamondLink(project.repoUrl, t(currentLang, 'projects.code')) : ''}
-            ${project.demoUrl ? diamondLink(project.demoUrl, t(currentLang, 'projects.demo')) : ''}
+            ${project.repoUrl ? circleLink(project.repoUrl, t(currentLang, 'projects.code')) : ''}
+            ${project.demoUrl ? circleLink(project.demoUrl, t(currentLang, 'projects.demo')) : ''}
           </div>
         </div>
       </article>
@@ -536,9 +506,9 @@ if ('IntersectionObserver' in window && !prefersReducedMotion) {
   revealTargets.forEach((el) => el.classList.add('is-visible'));
 }
 
-// ===== Hero parallax (sun + mountain ranges) =====
+// ===== Hero parallax (sun + mountain ridges) =====
 const hero = document.getElementById('inicio');
-const heroSun = hero.querySelector('.sun');
+const heroSun = hero.querySelector('.hero-sun');
 const ridgeLayers = hero.querySelectorAll('.parallax-layer');
 // Back layers move more than front ones, like the layered landscapes in the references.
 const RIDGE_SPEEDS = { l1: 0.22, l2: 0.15, l3: 0.08, l4: 0 };
@@ -568,13 +538,11 @@ if (!prefersReducedMotion) {
 
 // ===== Section rail (current section counter) =====
 const sections = document.querySelectorAll('main [data-section]');
-const railRune = document.getElementById('rail-rune');
 const railIndex = document.getElementById('rail-index');
 const railLabel = document.getElementById('rail-label');
 let activeSection = sections[0];
 
 function updateRail() {
-  railRune.textContent = activeSection.dataset.rune;
   railIndex.textContent = activeSection.dataset.section;
   railLabel.textContent = t(currentLang, activeSection.dataset.label);
 }
