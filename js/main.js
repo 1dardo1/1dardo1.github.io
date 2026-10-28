@@ -7,9 +7,6 @@ const translations = {
       themeToggle: 'Switch between light and dark mode',
       menuToggle: 'Open navigation menu',
       langToggle: 'Switch to Spanish',
-      emailIcon: "Send an email to Carlos Martín Velázquez",
-      githubIcon: "Carlos Martín Velázquez's GitHub profile",
-      linkedinIcon: "Carlos Martín Velázquez's LinkedIn profile",
       focusAreas: 'Focus areas',
     },
     brand: { tagline: 'Software that lasts' },
@@ -87,6 +84,7 @@ const translations = {
       submit: 'Send message',
       sending: 'Sending…',
       directly: 'Or reach me directly',
+      print: 'Save this CV as PDF',
       notConfigured: 'The form isn\'t active yet. Please email me directly at crlsmartinvelazquez@gmail.com in the meantime.',
       success: 'Message sent! I\'ll get back to you as soon as possible.',
       error: 'Something went wrong sending your message. Please try emailing me directly at crlsmartinvelazquez@gmail.com.',
@@ -108,9 +106,6 @@ const translations = {
       themeToggle: 'Cambiar entre modo claro y oscuro',
       menuToggle: 'Abrir menú de navegación',
       langToggle: 'Cambiar a inglés',
-      emailIcon: 'Escribir un email a Carlos Martín Velázquez',
-      githubIcon: 'Perfil de GitHub de Carlos Martín Velázquez',
-      linkedinIcon: 'Perfil de LinkedIn de Carlos Martín Velázquez',
       focusAreas: 'Áreas de enfoque',
     },
     brand: { tagline: 'Software que perdura' },
@@ -188,6 +183,7 @@ const translations = {
       submit: 'Enviar mensaje',
       sending: 'Enviando…',
       directly: 'O escríbeme directamente',
+      print: 'Guardar este CV en PDF',
       notConfigured: 'El formulario todavía no está activo. Escríbeme directamente a crlsmartinvelazquez@gmail.com mientras tanto.',
       success: '¡Mensaje enviado! Te responderé lo antes posible.',
       error: 'No se pudo enviar el mensaje. Prueba a escribirme directamente a crlsmartinvelazquez@gmail.com.',
@@ -266,11 +262,15 @@ const themeToggle = document.getElementById('theme-toggle');
 const iconSun = document.getElementById('icon-sun');
 const iconMoon = document.getElementById('icon-moon');
 
+const themeColorMetas = document.querySelectorAll('meta[name="theme-color"]');
+
 function syncThemeIcons() {
   const isDark = root.classList.contains('dark');
   iconSun.classList.toggle('hidden', !isDark);
   iconMoon.classList.toggle('hidden', isDark);
   themeToggle.setAttribute('aria-pressed', String(isDark));
+  // Keep the mobile browser bar in sync with the chosen theme, not just the OS one.
+  themeColorMetas.forEach((meta) => meta.setAttribute('content', isDark ? '#0f1716' : '#f1f3ef'));
 }
 
 syncThemeIcons();
@@ -287,24 +287,30 @@ const mobileMenu = document.getElementById('mobile-menu');
 const iconMenu = document.getElementById('icon-menu');
 const iconClose = document.getElementById('icon-close');
 
+function setMenuOpen(open) {
+  mobileMenu.classList.toggle('hidden', !open);
+  iconMenu.classList.toggle('hidden', open);
+  iconClose.classList.toggle('hidden', !open);
+  menuToggle.setAttribute('aria-expanded', String(open));
+}
+
 menuToggle.addEventListener('click', () => {
-  const isOpen = !mobileMenu.classList.contains('hidden');
-  mobileMenu.classList.toggle('hidden');
-  mobileMenu.classList.toggle('flex');
-  iconMenu.classList.toggle('hidden', !isOpen);
-  iconClose.classList.toggle('hidden', isOpen);
-  menuToggle.setAttribute('aria-expanded', String(!isOpen));
+  setMenuOpen(mobileMenu.classList.contains('hidden'));
 });
 
 mobileMenu.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    mobileMenu.classList.add('hidden');
-    mobileMenu.classList.remove('flex');
-    iconMenu.classList.remove('hidden');
-    iconClose.classList.add('hidden');
-    menuToggle.setAttribute('aria-expanded', 'false');
-  });
+  link.addEventListener('click', () => setMenuOpen(false));
 });
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+    setMenuOpen(false);
+    menuToggle.focus();
+  }
+});
+
+// ===== Save as PDF (uses the print stylesheet) =====
+document.getElementById('print-cv').addEventListener('click', () => window.print());
 
 // ===== Real-time professional experience clock =====
 const EXPERIENCE_START = new Date('2026-02-02T00:00:00');
@@ -542,9 +548,15 @@ const railIndex = document.getElementById('rail-index');
 const railLabel = document.getElementById('rail-label');
 let activeSection = sections[0];
 
+const navLinks = document.querySelectorAll('.nav-links .nav-link, .mobile-menu .nav-link');
+
 function updateRail() {
   railIndex.textContent = activeSection.dataset.section;
   railLabel.textContent = t(currentLang, activeSection.dataset.label);
+  navLinks.forEach((link) => {
+    if (link.getAttribute('href') === `#${activeSection.id}`) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  });
 }
 
 if ('IntersectionObserver' in window) {
