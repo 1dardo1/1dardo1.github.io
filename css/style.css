@@ -45,7 +45,7 @@
   --fiber: #fbfcfa;
   --ink: #17282a;
   --ink-soft: #435659;
-  --muted: #66787a;
+  --muted: #55676a;
   --line: rgba(23, 40, 42, 0.16);
 
   /* Main colour: pine green — identical in light and dark mode */
@@ -467,6 +467,14 @@ strong {
   color: var(--ink);
 }
 
+.nav-link[aria-current] {
+  color: var(--ink);
+}
+
+.nav-links .nav-link[aria-current]::after {
+  right: 0;
+}
+
 .nav-link:hover::after {
   right: 0;
 }
@@ -673,13 +681,35 @@ strong {
   gap: 0.9rem;
 }
 
-.hero-location {
+.hero-meta {
   margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.hero-meta li {
   display: flex;
   align-items: center;
   gap: 0.45rem;
-  font-size: 0.85rem;
-  color: var(--muted);
+}
+
+.meta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.meta-link:hover {
+  color: var(--accent-text);
+  border-color: currentColor;
 }
 
 /* Right column: focus "pillars" + handwritten accent */
@@ -966,6 +996,13 @@ strong {
 
 .stack-card--wide {
   grid-column: 1 / -1;
+}
+
+/* Five cards + the wide one: letting Tools span two columns fills the grid at 2 and 3 columns */
+@media (min-width: 640px) {
+  .stack-card--tools {
+    grid-column: span 2;
+  }
 }
 
 .stack-card-title {
@@ -1266,28 +1303,56 @@ strong {
   margin-top: 2.5rem;
 }
 
-.socials {
+.contact-links {
   margin-top: 1rem;
-  display: flex;
+  display: grid;
   gap: 0.75rem;
 }
 
-.social-icon {
-  display: grid;
-  place-items: center;
-  width: 2.9rem;
-  height: 2.9rem;
-  border-radius: 50%;
-  border: 1px solid var(--ink-soft);
-  color: var(--ink-soft);
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  max-width: 100%;
+  color: var(--ink);
 }
 
-.social-icon:hover {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--paper);
-  transform: translateY(-2px);
+.contact-link-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.contact-link-text {
+  font-weight: 500;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.contact-link:hover .contact-link-icon {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.contact-link:hover .contact-link-text {
+  border-color: currentColor;
+}
+
+.print-btn {
+  margin-top: 1.75rem;
+  padding: 0 0 0.2rem;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
 }
 
 .contact-form {
@@ -1411,5 +1476,203 @@ strong {
   .js .reveal {
     opacity: 1;
     transform: none;
+  }
+}
+
+/* ===== Print / "Save as PDF": a clean, ink-friendly CV ===== */
+@media print {
+  :root,
+  .dark {
+    --paper: #fff;
+    --paper-2: #fff;
+    --ink: #111;
+    --ink-soft: #333;
+    --muted: #555;
+    --line: #ccc;
+    --accent-text: #2c6553;
+    --band-bg: #fff;
+    --band-ink: #111;
+    --band-muted: #444;
+    --band-line: #ccc;
+    --band-card: #fff;
+    --band-accent: #2c6553;
+    --grain: none;
+    color-scheme: light;
+  }
+
+  @page {
+    margin: 14mm 14mm 16mm;
+  }
+
+  body {
+    background: #fff;
+    font-size: 10pt;
+  }
+
+  .skip-link,
+  .site-header,
+  .section-rail,
+  .hero-sun,
+  .hero-ridges,
+  .hero-aside,
+  .hero-ctas,
+  .tear,
+  .text-link,
+  .print-btn,
+  .contact-form,
+  .project-media,
+  .project-links,
+  .values,
+  .footer-runes,
+  .site-footer p:last-child {
+    display: none !important;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero::after {
+    display: none;
+  }
+
+  .hero-grid {
+    display: block;
+    padding: 0;
+  }
+
+  .hero-title {
+    font-size: 26pt;
+    margin-top: 0.3rem;
+  }
+
+  .hero-title em {
+    display: inline;
+  }
+
+  .hero-lead,
+  .prose,
+  .project-desc {
+    font-size: 10pt;
+    line-height: 1.5;
+  }
+
+  .clock {
+    margin-top: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .hero-meta {
+    margin-top: 0.75rem;
+  }
+
+  /* Print the destination of every external link */
+  .hero-meta a::after,
+  .contact-link[href^="http"]::after {
+    content: ' — ' attr(href);
+    font-weight: 400;
+    color: var(--muted);
+  }
+
+  .container {
+    padding-inline: 0;
+  }
+
+  .section {
+    padding-block: 1.25rem 0;
+    break-inside: auto;
+  }
+
+  /* Never leave a section heading alone at the bottom of a page */
+  .section-head,
+  .section-title,
+  .label {
+    break-after: avoid;
+  }
+
+  .section-head {
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    margin-top: 0.2rem;
+    font-size: 15pt;
+  }
+
+  .section-title--xl {
+    font-size: 15pt;
+  }
+
+  .section-intro {
+    margin-top: 0.3rem;
+  }
+
+  .about-grid,
+  .contact-grid {
+    display: block;
+  }
+
+  .about-side {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .stack-grid,
+  .projects-grid {
+    gap: 0.5rem;
+  }
+
+  .stack-card,
+  .project-card,
+  .about-side,
+  .timeline-item {
+    break-inside: avoid;
+  }
+
+  .stack-card {
+    padding: 0.6rem 0.9rem 0.8rem;
+  }
+
+  .stack-card-title {
+    font-size: 12pt;
+  }
+
+  .badges {
+    margin-top: 0.4rem;
+  }
+
+  .badge {
+    padding: 0.1rem 0.5rem;
+    font-size: 8pt;
+  }
+
+  .projects-grid,
+  .project-card:only-child {
+    display: block;
+  }
+
+  #stack {
+    break-before: page;
+  }
+
+  .project-title,
+  .project-card:only-child .project-title {
+    font-size: 14pt;
+  }
+
+  .contact-direct {
+    margin-top: 0.75rem;
+  }
+
+  .contact-link-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  .site-footer {
+    padding: 1rem 0 0;
+    background: #fff;
   }
 }
