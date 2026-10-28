@@ -968,14 +968,7 @@ strong {
   grid-column: 1 / -1;
 }
 
-.stack-num {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  color: var(--band-muted);
-}
-
 .stack-card-title {
-  margin-top: 0.75rem;
   font-family: var(--serif);
   font-size: 1.6rem;
   font-weight: 450;
