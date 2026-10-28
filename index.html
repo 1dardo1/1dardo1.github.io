@@ -28,12 +28,18 @@
     const root = document.documentElement;
     root.classList.add('js');
 
-    const storedTheme = localStorage.getItem('theme');
+    // Storage can be blocked (private mode, disabled cookies): never let that stop the page.
+    let storedTheme = null;
+    let storedLang = null;
+    try {
+      storedTheme = localStorage.getItem('theme');
+      storedLang = localStorage.getItem('lang');
+    } catch {}
+
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const theme = storedTheme || (prefersDark ? 'dark' : 'light');
     if (theme === 'dark') root.classList.add('dark');
 
-    const storedLang = localStorage.getItem('lang');
     root.lang = storedLang === 'es' ? 'es' : 'en';
   })();
 </script>
@@ -152,7 +158,7 @@
         <p class="eyebrow reveal">Backend / Fullstack Developer</p>
 
         <h1 class="hero-title reveal">
-          Carlos Martín <em>Velázquez</em>
+          Carlos Martín <span class="hero-title-accent">Velázquez</span>
         </h1>
 
         <p class="hero-lead reveal" data-i18n="hero.subtitle">
@@ -477,16 +483,16 @@
       </div>
 
       <form id="contact-form" class="contact-form reveal">
-        <input type="checkbox" name="botcheck" class="hidden" style="display: none;" tabindex="-1" autocomplete="off">
+        <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
 
         <div class="field">
           <label for="contact-name" data-i18n="contact.nameLabel">Name</label>
-          <input type="text" id="contact-name" name="name" required>
+          <input type="text" id="contact-name" name="name" autocomplete="name" required>
         </div>
 
         <div class="field">
           <label for="contact-email" data-i18n="contact.emailLabel">Your email</label>
-          <input type="email" id="contact-email" name="email" required>
+          <input type="email" id="contact-email" name="email" autocomplete="email" required>
         </div>
 
         <div class="field">
