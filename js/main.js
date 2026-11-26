@@ -60,6 +60,7 @@ const translations = {
       learning: 'Currently learning',
       selfTaught: 'Self-taught',
       crossPlatformDev: 'Cross-platform development',
+      ragEval: 'RAG systems &amp; evaluation',
       viaMaster:
         'Via the <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="link">AI-Powered Software Development Master\'s Degree</a> — Big School',
       softwareArchitecture: 'Software Architecture',
@@ -163,6 +164,7 @@ const translations = {
       learning: 'Actualmente aprendiendo',
       selfTaught: 'Autoaprendizaje',
       crossPlatformDev: 'Desarrollo multiplataforma',
+      ragEval: 'Sistemas RAG y evaluación',
       viaMaster:
         'A través del <a href="https://thebigschool.com/master-desarrollo-con-ia/" target="_blank" rel="noopener noreferrer" class="link">Máster de Desarrollo con IA</a> — Big School',
       softwareArchitecture: 'Arquitectura de Software',
@@ -421,6 +423,22 @@ contactForm.addEventListener('submit', async (event) => {
 // render automatically, and the empty state disappears on its own.
 const projects = [
   {
+    title: 'Devtools RAG System',
+    kicker: { en: 'Python · Event-driven · Open source', es: 'Python · Orientado a eventos · Código abierto' },
+    description: {
+      en: 'Retrieval-augmented generation system over developer documentation, split into independent services. The ingestion service accepts documents, enforces the domain rules and writes each document and its event in a single database transaction (transactional outbox), so nothing is stored without being announced. Event schemas live in a separate, versioned contracts package. The retrieval service (hybrid search on Qdrant, evaluation with Ragas) is the next phase. Running on free-tier hosting: the first request after an idle spell can take about a minute.',
+      es: 'Sistema de generación aumentada por recuperación (RAG) sobre documentación para desarrolladores, dividido en servicios independientes. El servicio de ingesta acepta documentos, aplica las reglas de dominio y escribe cada documento y su evento en una única transacción de base de datos (transactional outbox), de modo que nada se guarda sin ser anunciado. Los esquemas de eventos viven en un paquete de contratos aparte y versionado. El servicio de recuperación (búsqueda híbrida en Qdrant, evaluación con Ragas) es la siguiente fase. Desplegado en hosting gratuito: la primera petición tras un rato inactivo puede tardar cerca de un minuto.',
+    },
+    role: {
+      en: 'Solo project with AI-assisted development (Claude Code). I set the architecture and the build order, and record every non-obvious decision as an ADR (27 so far); the AI accelerates the code writing under those rules, and CI enforces them: strict typing, 270+ tests including integration tests against real containers, and a 99% coverage floor.',
+      es: 'Proyecto en solitario con desarrollo asistido por IA (Claude Code). Fijé la arquitectura y el orden de construcción, y dejo cada decisión no trivial como un ADR (27 hasta ahora); la IA acelera la escritura del código bajo esas reglas, y el CI las hace cumplir: tipado estricto, más de 270 tests —incluidos de integración contra contenedores reales— y un mínimo de cobertura del 99 %.',
+    },
+    stack: ['Python 3.14', 'FastAPI', 'PostgreSQL', 'Hexagonal Architecture', 'Transactional Outbox', 'Docker', 'GitHub Actions (CI/CD)', 'Render + Neon'],
+    repoUrl: 'https://github.com/1dardo1/devtools-rag-ingestion',
+    demoUrl: 'https://devtools-rag-ingestion.onrender.com/docs',
+    image: '',
+  },
+  {
     title: 'LCP Builder',
     kicker: { en: 'Flutter · Open source', es: 'Flutter · Código abierto' },
     description: {
@@ -435,6 +453,22 @@ const projects = [
     repoUrl: 'https://github.com/1dardo1/lcp-builder',
     demoUrl: 'https://1dardo1.github.io/lcp-builder/',
     image: 'img/projects/lcp-builder.jpg',
+  },
+  {
+    title: 'D&D Helper',
+    kicker: { en: 'Angular · PWA + Android', es: 'Angular · PWA + Android' },
+    description: {
+      en: 'Offline-first D&D 5e companion: compendium browser, character builder and a rules engine that reads the real rules text instead of hand-written tables. Bilingual (ES/EN), installable as a PWA and as an Android APK, with a Python scraper that builds and translates the compendium.',
+      es: 'Compañero de D&D 5e que funciona sin conexión: explorador del compendio, creador de personajes y un motor de reglas que lee el texto real de las reglas en vez de tablas escritas a mano. Bilingüe (ES/EN), instalable como PWA y como APK de Android, con un scraper en Python que construye y traduce el compendio.',
+    },
+    role: {
+      en: 'Personal project with AI-assisted development (Claude Code, with project-specific skills and subagents). I define the features and the rules the app must respect; quality is held by 100+ spec files, a glossary check and a pipeline that never publishes a build that fails its checks.',
+      es: 'Proyecto personal con desarrollo asistido por IA (Claude Code, con skills y subagentes propios del proyecto). Defino las funciones y las reglas que la app debe respetar; la calidad la sostienen más de 100 ficheros de tests, una comprobación de glosario y un pipeline que nunca publica una versión que falle sus comprobaciones.',
+    },
+    stack: ['Angular 21', 'TypeScript', 'Signals', 'Vitest', 'PWA', 'Capacitor (Android)', 'Python (scraper)', 'GitHub Actions (CI/CD)'],
+    repoUrl: 'https://github.com/1dardo1/DnD_helper',
+    demoUrl: 'https://1dardo1.github.io/DnD_helper/',
+    image: '',
   },
   // {
   //   title: 'Project name',
