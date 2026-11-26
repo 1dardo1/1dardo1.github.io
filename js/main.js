@@ -468,7 +468,9 @@ const projects = [
     stack: ['Angular 21', 'TypeScript', 'Signals', 'Vitest', 'PWA', 'Capacitor (Android)', 'Python (scraper)', 'GitHub Actions (CI/CD)'],
     repoUrl: 'https://github.com/1dardo1/DnD_helper',
     demoUrl: 'https://1dardo1.github.io/DnD_helper/',
-    image: '',
+    // Not a demo: this is the real, full version of the app.
+    demoLabel: { en: 'Live version', es: 'Versión real' },
+    image: 'img/projects/dnd-helper.jpg',
   },
   // {
   //   title: 'Project name',
@@ -478,7 +480,8 @@ const projects = [
   //   stack: ['C#', '.NET', 'Angular'],
   //   repoUrl: 'https://github.com/1dardo1/...',
   //   demoUrl: '',
-  //   image: '',
+  //   demoLabel: { en: '...', es: '...' }, // optional: replaces "Demo" (e.g. "Live version")
+  //   image: '',                           // clicking it opens demoUrl (or repoUrl if no demo)
   // },
 ];
 
@@ -501,16 +504,28 @@ function renderProjects() {
 
   grid.innerHTML = projects
     .map(
-      (project) => `
+      (project) => {
+        const title = escapeHtml(project.title);
+        const demoLabel = project.demoLabel ? project.demoLabel[currentLang] : t(currentLang, 'projects.demo');
+        const media = `<img src="${escapeHtml(project.image)}" alt="${title} screenshot" loading="lazy">`;
+        return `
       <article class="project-card">
         ${
           project.image
-            ? `<div class="project-media"><img src="${escapeHtml(project.image)}" alt="${escapeHtml(project.title)} screenshot" loading="lazy"></div>`
+            ? `<div class="project-media">${
+                project.demoUrl
+                  ? `<a href="${escapeHtml(project.demoUrl)}" target="_blank" rel="noopener noreferrer" class="project-media-link" aria-label="${title}: ${escapeHtml(demoLabel)}">${media}</a>`
+                  : media
+              }</div>`
             : ''
         }
         <div class="project-body">
           ${project.kicker ? `<p class="project-kicker">${escapeHtml(project.kicker[currentLang])}</p>` : ''}
-          <h3 class="project-title">${escapeHtml(project.title)}</h3>
+          <h3 class="project-title">${
+            project.repoUrl
+              ? `<a href="${escapeHtml(project.repoUrl)}" target="_blank" rel="noopener noreferrer" class="project-title-link">${title}</a>`
+              : title
+          }</h3>
           <p class="project-desc">${escapeHtml(project.description[currentLang])}</p>
           <p class="project-role"><strong>${t(currentLang, 'projects.roleLabel')}</strong> ${escapeHtml(project.role[currentLang])}</p>
           <div class="badges">
@@ -518,11 +533,12 @@ function renderProjects() {
           </div>
           <div class="project-links">
             ${project.repoUrl ? circleLink(project.repoUrl, t(currentLang, 'projects.code')) : ''}
-            ${project.demoUrl ? circleLink(project.demoUrl, t(currentLang, 'projects.demo')) : ''}
+            ${project.demoUrl ? circleLink(project.demoUrl, demoLabel) : ''}
           </div>
         </div>
       </article>
-    `
+    `;
+      }
     )
     .join('');
 }
